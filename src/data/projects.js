@@ -1,0 +1,38 @@
+export const projects = [
+    {
+        title: "Snake HUD Arcade",
+        role: "토스 게임 공모전 참가 및 출시작",
+        period: "2025",
+        description:
+            "8bit 스타일 스네이크 게임을 HUD 느낌으로 구현한 미니 게임. 점수/배경음/포커스 제어 등 UX 디테일에 집중.",
+        tech: ["React", "Custom Canvas", "Audio", "HUD UI"],
+        links: {
+            demo: "https://tosssnakegame.netlify.app/",
+            github: "https://github.com/wellwellgood/snakegame",
+        },
+    },
+    {
+        title: "Map HUD Prototype",
+        role: "개인 프로젝트",
+        period: "2025",
+        description:
+            "지도 + HUD 오버레이를 조합한 내비게이션 컨셉. 속도, 경로, 남은 거리 등 핵심 정보만 전면에 노출.",
+        tech: ["React", "Map API", "Geolocation"],
+        links: {
+            demo: "https://hudnavigation.netlify.app/",
+            github: "https://github.com/wellwellgood/HUD",
+        },
+    },
+    {
+        title: "Neon Dashboard",
+        role: "개인 프로젝트",
+        period: "2025",
+        description:
+            "네온 스타일의 미니 대시보드. 위젯 단위로 정보 카드를 구성하고, 상태 및 테마를 관리.",
+        tech: ["React", "Tailwind CSS", "LocalStorage"],
+        links: {
+            demo: "https://kkywebapp.netlify.app/",
+            github: "https://github.com/wellwellgood/FrontReact",
+        },
+    },
+];
