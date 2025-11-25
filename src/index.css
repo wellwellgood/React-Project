@@ -5,6 +5,14 @@
 /* Google Font 픽셀 느낌 */
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 가로 스크롤만 막기 */
+  overflow-y: auto; /* 세로 스크롤 허용 */
+}
+
+
 :root {
   color-scheme: dark;
 }
@@ -19,6 +27,7 @@ body {
 /* 배경 그리드 + 네온 프레임 느낌 */
 .app-bg {
   @apply min-h-screen bg-hud-bg relative overflow-hidden;
+  min-height: 100vh;
 }
 
 .app-bg::before {
@@ -53,7 +62,7 @@ body {
 }
 .neon-shell:hover{
   box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.25),
-  0 0 30px rgba(78, 242, 255, 0.25);
+  0 0 30px rgba(78, 242, 255, 0.8);
 }
 
 .neon-shell::before {
