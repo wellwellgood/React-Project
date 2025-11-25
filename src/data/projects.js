@@ -35,4 +35,16 @@ export const projects = [
             github: "https://github.com/wellwellgood/FrontReact",
         },
     },
+    {
+        title: "Publishing Site",
+        role: "개인 프로젝트",
+        period: "2023 ~ 2025",
+        description:
+            "각종 사이트들을 클론 코딩한 프로젝트 모음.",
+        tech: ["Html", "CSS", "javascript"],
+        links: {
+            demo: "https://kkywebapp.netlify.app/",
+            github: "https://github.com/wellwellgood/K-popol/tree/main/sitelink",
+        },
+    },
 ];
