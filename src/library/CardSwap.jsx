@@ -1,0 +1,389 @@
+import React, { useState } from "react";
+
+// 부채꼴 스타일 CardSwap
+export function CardSwap({ children }) {
+  const items = React.Children.toArray(children);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleCardClick = (index) => {
+    if (index === activeIndex) {
+      // 맨 앞 카드 클릭 시 다음 카드로
+      setActiveIndex((prev) => (prev + 1) % items.length);
+    } else {
+      // 뒤 카드 클릭 시 해당 카드를 앞으로
+      setActiveIndex(index);
+    }
+  };
+
+  return (
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        maxWidth: "900px",
+        height: "520px",
+        margin: "0 auto",
+        perspective: "2000px",
+        transformStyle: "preserve-3d",
+      }}
+    >
+      {/* 카드 스택 */}
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          transformStyle: "preserve-3d",
+        }}
+      >
+        {items.map((child, index) => {
+          // activeIndex 기준으로 역순 배치 (마지막이 맨 위에)
+          const reverseIndex =
+            (items.length - 1 - index + activeIndex) % items.length;
+          const isActive = index === activeIndex;
+
+          return (
+            <div
+              key={index}
+              onClick={() => handleCardClick(index)}
+              style={{
+                position: "absolute",
+                width: "78%",
+                height: "75%",
+                left: "50%",
+                top: "50%",
+                transformStyle: "preserve-3d",
+                transformOrigin: "center bottom",
+                // 핵심: 부채꼴 펼침 효과
+                transform: `
+                  translate(-50%, -50%)
+                  ${
+                    isActive
+                      ? "rotateX(0deg)"
+                      : `rotateX(${18 + reverseIndex * 3}deg)`
+                  }
+                  rotateZ(${reverseIndex * -5}deg)
+                  translateY(${isActive ? "0px" : `${-reverseIndex * 40}px`})
+                  translateX(${reverseIndex * 28}px)
+                  translateZ(${isActive ? "0px" : `${-reverseIndex * 100}px`})
+                  scale(${isActive ? 1 : 1 - reverseIndex * 0.03})
+                `,
+                opacity: isActive ? 1 : Math.max(0.6, 1 - reverseIndex * 0.12),
+                filter: `blur(${isActive ? 0 : reverseIndex * 0.3}px)`,
+                transition: "all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                cursor: "pointer",
+                zIndex: items.length - reverseIndex,
+                boxShadow: isActive
+                  ? "0 30px 60px rgba(0, 0, 0, 0.6), 0 15px 30px rgba(0, 0, 0, 0.4)"
+                  : `0 ${15 + reverseIndex * 5}px ${
+                      30 + reverseIndex * 10
+                    }px rgba(0, 0, 0, ${0.4 - reverseIndex * 0.05})`,
+              }}
+            >
+              {child}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* 하단 인디케이터 */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-50px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          display: "flex",
+          gap: "8px",
+          zIndex: 200,
+        }}
+      >
+        {items.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            style={{
+              width: index === activeIndex ? "24px" : "8px",
+              height: "8px",
+              borderRadius: "4px",
+              background:
+                index === activeIndex ? "#06b6d4" : "rgba(255, 255, 255, 0.3)",
+              border: "none",
+              cursor: "pointer",
+              transition: "all 0.3s",
+            }}
+            onMouseEnter={(e) => {
+              if (index !== activeIndex) {
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.5)";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (index !== activeIndex) {
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.3)";
+              }
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Card 컴포넌트
+export function Card({ label, children }) {
+  return (
+    <div
+      style={{
+        height: "100%",
+        width: "100%",
+        borderRadius: "18px",
+        background: "rgba(15, 23, 42, 0.95)",
+        backdropFilter: "blur(20px)",
+        border: "1px solid rgba(255, 255, 255, 0.15)",
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+      }}
+    >
+      {/* 헤더 - 좌측 정렬 라벨 */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          padding: "16px 20px",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+          background: "rgba(255, 255, 255, 0.02)",
+        }}
+      >
+        <div
+          style={{
+            width: "10px",
+            height: "10px",
+            borderRadius: "50%",
+            background: "rgba(255, 255, 255, 0.9)",
+            boxShadow: "0 0 8px rgba(255, 255, 255, 0.5)",
+          }}
+        />
+        <span
+          style={{
+            fontSize: "14px",
+            color: "rgba(255, 255, 255, 0.95)",
+            fontWeight: "500",
+            letterSpacing: "0.02em",
+          }}
+        >
+          {label}
+        </span>
+      </div>
+
+      {/* 바디 */}
+      <div
+        style={{
+          flex: 1,
+          padding: "32px",
+          color: "white",
+          overflow: "auto",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+// 데모
+export default function Demo() {
+  const projects = [
+    {
+      title: "Snake HUD Arcade",
+      year: "2025",
+      subtitle: "독소 게임 플랫폼 쿨가 및 출시작",
+      description:
+        "8bit 스타일 스네이크 게임을 HUD 느낌으로 구현한 미니 게임. 점수/레벨정보/포지스 제어 등 UX 디테일에 집중.",
+      tags: ["React", "Custom Canvas", "Audio", "HUD UI"],
+    },
+    {
+      title: "Portfolio Website",
+      year: "2025",
+      subtitle: "개인 포트폴리오 사이트",
+      description:
+        "React와 3D 효과를 활용한 인터랙티브 포트폴리오. 레트로 아케이드 테마로 제작.",
+      tags: ["React", "CSS 3D", "Responsive", "Animation"],
+    },
+    {
+      title: "E-Commerce Dashboard",
+      year: "2024",
+      subtitle: "관리자 대시보드 시스템",
+      description:
+        "실시간 데이터 시각화와 사용자 관리 기능을 갖춘 어드민 페이지.",
+      tags: ["React", "Chart.js", "Firebase", "Material UI"],
+    },
+  ];
+
+  const labels = ["Smooth", "Reliable", "Customizable"];
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(to bottom, #0f172a, #1e1b4b)",
+        padding: "80px 20px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <h2
+        style={{
+          color: "white",
+          fontSize: "32px",
+          fontWeight: "bold",
+          marginBottom: "60px",
+          textAlign: "center",
+        }}
+      >
+        Projects
+      </h2>
+
+      <CardSwap>
+        {projects.map((project, index) => (
+          <Card key={project.title} label={labels[index]}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: "24px",
+                    fontWeight: "bold",
+                    color: "white",
+                    margin: 0,
+                  }}
+                >
+                  {project.title}
+                </h3>
+                <span
+                  style={{
+                    fontSize: "14px",
+                    color: "rgba(255, 255, 255, 0.5)",
+                  }}
+                >
+                  {project.year}
+                </span>
+              </div>
+
+              <div
+                style={{
+                  fontSize: "14px",
+                  color: "#ec4899",
+                  fontWeight: "500",
+                }}
+              >
+                {project.subtitle}
+              </div>
+
+              <p
+                style={{
+                  fontSize: "15px",
+                  color: "rgba(255, 255, 255, 0.8)",
+                  lineHeight: "1.7",
+                }}
+              >
+                {project.description}
+              </p>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "8px",
+                  marginTop: "8px",
+                }}
+              >
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    style={{
+                      padding: "6px 14px",
+                      fontSize: "12px",
+                      borderRadius: "20px",
+                      background: "rgba(255, 255, 255, 0.08)",
+                      border: "1px solid rgba(255, 255, 255, 0.15)",
+                      color: "rgba(255, 255, 255, 0.9)",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div style={{ display: "flex", gap: "12px", marginTop: "16px" }}>
+                <button
+                  style={{
+                    padding: "10px 24px",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                    borderRadius: "24px",
+                    background: "transparent",
+                    border: "1.5px solid #06b6d4",
+                    color: "#06b6d4",
+                    cursor: "pointer",
+                    transition: "all 0.3s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                  }}
+                >
+                  DEMO
+                </button>
+                <button
+                  style={{
+                    padding: "10px 24px",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                    borderRadius: "24px",
+                    background: "transparent",
+                    border: "1.5px solid rgba(255, 255, 255, 0.3)",
+                    color: "white",
+                    cursor: "pointer",
+                    transition: "all 0.3s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background =
+                      "rgba(255, 255, 255, 0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                  }}
+                >
+                  GITHUB
+                </button>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </CardSwap>
+
+      <p
+        style={{
+          textAlign: "center",
+          color: "rgba(255, 255, 255, 0.5)",
+          marginTop: "80px",
+          fontSize: "14px",
+        }}
+      >
+        💡 카드를 클릭해서 전환하거나, 뒤의 카드를 클릭해서 앞으로 가져오세요
+      </p>
+    </div>
+  );
+}

@@ -1,6 +1,9 @@
+import snakeImg from "../img/Snake Arcade Game.png";
+import dashboardImg from "../img/Dashboard.png";
+
 export const projects = [
     {
-        title: "Snake HUD Arcade",
+        title: "Snake Arcade Game",
         role: "토스 게임 공모전 참가 및 출시작",
         period: "2025",
         description:
@@ -10,9 +13,11 @@ export const projects = [
             demo: "https://tosssnakegame.netlify.app/",
             github: "https://github.com/wellwellgood/snakegame",
         },
+        background: `url(${snakeImg}) center/cover no-repeat`,
+
     },
     {
-        title: "Map HUD Prototype",
+        title: "Map Prototype",
         role: "개인 프로젝트",
         period: "2025",
         description:
@@ -24,7 +29,7 @@ export const projects = [
         },
     },
     {
-        title: "Neon Dashboard",
+        title: "Dashboard",
         role: "개인 프로젝트",
         period: "2025",
         description:
@@ -34,6 +39,9 @@ export const projects = [
             demo: "https://kkywebapp.netlify.app/",
             github: "https://github.com/wellwellgood/FrontReact",
         },
+        background: `url(${dashboardImg}) center/cover no-repeat`,
+        bgClass: "bg-black-900/100",
+        textColor: "#000000",
     },
     {
         title: "Publishing Site",
@@ -43,7 +51,7 @@ export const projects = [
             "각종 사이트들을 클론 코딩한 프로젝트 모음.",
         tech: ["Html", "CSS", "javascript"],
         links: {
-            demo: "https://kkywebapp.netlify.app/",
+            // demo: alert("깃 허브를 확인해 주세요"),
             github: "https://github.com/wellwellgood/K-popol/tree/main/sitelink",
         },
     },

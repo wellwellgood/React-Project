@@ -1,0 +1,75 @@
+/* src/components/FolderSwiper.css */
+.folder-swiper {
+    width: 100%;
+    height: 400px;
+    /* 컨테이너 높이 */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+    margin-top: 10%;
+    /* 날아가는 카드가 화면 밖에서 안 보이게 */
+}
+
+.folder-swiper-inner {
+    width: 500px;
+    /* 카드 너비 */
+    height: 90%;
+    position: relative;
+}
+
+.folder-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background: #1e1e1e;
+    /* 기본 배경색 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    /* 카드 정렬 */
+    display: flex;
+    flex-direction: column;
+
+    /* 중요: 애니메이션 성능 최적화 */
+    will-change: transform, opacity;
+    transform-origin: bottom center;
+
+    user-select: none;
+}
+
+/* 맨 뒤 카드 */
+.folder-card-back {
+    z-index: 1;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0.6;
+    background: #333;
+    /* 뒤쪽 카드 구분감 */
+}
+
+/* 중간 1 카드 */
+.folder-card-mid {
+    z-index: 2;
+    transform: scale(0.95) translateY(10px);
+    opacity: 0.8;
+    background: #2a2a2a;
+}
+
+/* 중간 2 카드 */
+.folder-card-mid {
+    z-index: 2;
+    transform: scale(0.93) translateY(10px);
+    opacity: 0.8;
+    background: #2a2a2a;
+}
+
+/* 맨 앞 카드 */
+.folder-card-top {
+    z-index: 3;
+    /* transform은 JS에서 제어 */
+    background: #2a2a2a;
+    background-position: center;
+    background-size: cover;
+}

@@ -15,7 +15,15 @@ const skillGroups = [
   },
   {
     label: "ETC",
-    items: ["Netlify / Vercel", "Figma (UI)", "Git / GitHub"],
+    items: ["Netlify / Vercel", "Photoshop", "Git / GitHub"],
+  },
+  {
+    label: "BACKEND / DEPLOY",
+    items: ["Render", "NETLIFY", "NEON"],
+  },
+  {
+    label: "SHOPINGMALL",
+    items: ["카페24", "SHOPIFY", "NAVER SMART STORE"],
   },
 ];
 
