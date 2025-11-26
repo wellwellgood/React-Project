@@ -143,6 +143,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
           padding: "12px 16px",
           border:"1px solid rgba(255, 255, 255, 1)",
           borderRadius: "12px 12px 0 0",
+          borderbottom:"none",
           borderBottom: "1px solid rgba(255, 255, 255, 1)",
           background: "#050816",
         }}
