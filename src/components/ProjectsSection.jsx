@@ -43,7 +43,7 @@ export default function ProjectsSection() {
 
 function ProjectCard({ project }) {
   const baseClasses =
-    "h-full w-full rounded-xl border p-5 flex flex-col gap-3 transition-colors duration-300";
+    "h-full w-full rounded-b border p-5 flex flex-col gap-3 transition-colors duration-300";
 
   const bgClass = project.bgClass || "bg-black-950/90";
   const textColor = project.textColor || "";
@@ -111,7 +111,7 @@ function ProjectCard({ project }) {
         {project.links?.demo && (
           <a
             href={project.links.demo}
-            className="flex-1 text-center rounded-md border border-neon-cyan/50 py-1.5 text-neon-cyan hover:bg-neon-cyan/10 transition-colors"
+            className="flex-1 text-center rounded-md border border-neon-cyan/100 py-1.5 text-neon-cyan hover:bg-neon-cyan/50 transition-colors"
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -122,7 +122,7 @@ function ProjectCard({ project }) {
         {project.links?.github && (
           <a
             href={project.links.github}
-            className="flex-1 text-center rounded-md border border-slate-600 py-1.5 text-slate-300 hover:border-neon-pink hover:text-neon-pink transition-colors"
+            className="flex-1 text-center rounded-md border border-slate-600 py-1.5 text-slate-300 hover:border-neon-pink/100 hover:text-neon-pink/100 transition-colors"
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}

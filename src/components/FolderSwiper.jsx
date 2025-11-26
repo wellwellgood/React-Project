@@ -123,6 +123,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
         <div className="folder-card folder-card-back">
           {renderItem(safeItems[backIndex], backIndex)}
         </div>
+        
 
         {/* 중간 카드 */}
         <div className="folder-card folder-card-mid">
@@ -134,6 +135,43 @@ export default function FolderSwiper({ items = [], renderItem }) {
           className="folder-card folder-card-top"
           style={getTopCardStyle()}
         >
+          <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          padding: "12px 16px",
+          border:"1px solid rgba(255, 255, 255, 1)",
+          borderRadius: "12px 12px 0 0",
+          borderBottom: "1px solid rgba(255, 255, 255, 1)",
+          background: "#050816",
+        }}
+      >
+        <div
+          style={{
+            width: 12,
+            height: 12,
+            borderRadius: "50%",
+            background: "rgb(255, 95, 86)",
+          }}
+        ></div>
+        <div
+          style={{
+            width: 12,
+            height: 12,
+            borderRadius: "50%",
+            background: "rgb(255, 189, 46)",
+          }}
+        ></div>
+        <div
+          style={{
+            width: 12,
+            height: 12,
+            borderRadius: "50%",
+            background: "rgb(39, 201, 63)",
+          }}
+        ></div>
+      </div>
           {renderItem(safeItems[topIndex], topIndex)}
         </div>
       </div>
