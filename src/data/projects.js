@@ -19,7 +19,7 @@ export const projects = [
     {
         title: "Map Prototype",
         role: "개인 프로젝트",
-        period: "2025",
+        period: "2025 ~ (미완성)",
         description:
             "지도 + HUD 오버레이를 조합한 내비게이션 컨셉. 속도, 경로, 남은 거리 등 핵심 정보만 전면에 노출.",
         tech: ["React", "Map API", "Geolocation"],
