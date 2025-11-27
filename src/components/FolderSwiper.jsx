@@ -148,7 +148,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
           onClick={() => {
             // 1) 지금 드래그 중이었거나, 실제로 움직였으면 플립 막기
             if (isDragging || didDragRef.current || exitDirection) return;
-        
+
             // 2) 멈춰 있는 상태에서만 앞/뒤 토글
             setIsFlipped((prev) => !prev);
           }} // 클릭 시 플립
@@ -211,8 +211,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
                       // background: "#050816",
                     }
               }
-            >
-            </div>
+            ></div>
           </div>
         </div>
       </div>
