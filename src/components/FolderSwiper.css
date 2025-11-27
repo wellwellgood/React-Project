@@ -9,7 +9,7 @@
     flex-direction: column-reverse;
     align-items: center;
     perspective: 1000px;
-    margin-top: 5%;
+    margin: 5% 0;
     /* 날아가는 카드가 화면 밖에서 안 보이게 */
 }
 
@@ -124,5 +124,5 @@
 }
 
 .folder-swiper-info{
-    margin: 30px;
+    margin-bottom: 30px;
 }
