@@ -43,15 +43,15 @@ export default function ProjectsSection() {
 
 function ProjectCard({ project }) {
   const baseClasses =
-    "h-full w-full rounded-b border p-5 flex flex-col gap-3 transition-colors duration-300";
+    "h-full w-full rounded-b border p-5 flex flex-col gap-3 transition-colors duration-300 bg-transparent";
 
-  const bgClass = project.bgClass || "bg-black-950/90";
+    const bgClass = project.bgClass || "bg-transparent";
   const textColor = project.textColor || "";
 
   if (project.isPlaceholder) {
     return (
       <article
-        className={`${baseClasses} bg-slate-950/80 border-slate-700/50 items-center justify-center opacity-60`}
+        className={`${baseClasses} ${bgClass} border-slate-700/50 items-center justify-center opacity-60`}
         style={{ color: textColor }}
       >
         <div className="text-4xl mb-2">🚧</div>
@@ -66,15 +66,6 @@ function ProjectCard({ project }) {
   return (
     <article
       className={`${baseClasses} ${bgClass} hover:border-neon-cyan/80 hover:shadow-neon`}
-      style={
-        project.background
-          ? {
-              background: project.background,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }
-          : undefined
-      }
     >
       <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3">
         <h3
@@ -83,14 +74,15 @@ function ProjectCard({ project }) {
         >
           {project.title}
         </h3>
-        <span className="text-[11px] font-mono text-slate-500">
+        <span className="text-[15px] font-mono text-neon-cyan/100">
           {project.period}
         </span>
       </div>
 
-      <div className="text-xs font-mono text-neon-pink/90">{project.role}</div>
+      <div className="text-xl text-neon-pink/100">{project.role}</div>
 
-      <p className="text-xs text-slate-300 leading-relaxed flex-grow">
+      <p className="text-s leading-relaxed flex-grow"
+      style={{color: project.textColor,}}>
         {project.description}
       </p>
 
@@ -112,6 +104,7 @@ function ProjectCard({ project }) {
           <a
             href={project.links.demo}
             className="flex-1 text-center rounded-md border border-neon-cyan/100 py-1.5 text-neon-cyan hover:bg-neon-cyan/50 transition-colors"
+            style={{ color: textColor }}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -122,7 +115,8 @@ function ProjectCard({ project }) {
         {project.links?.github && (
           <a
             href={project.links.github}
-            className="flex-1 text-center rounded-md border border-slate-600 py-1.5 text-slate-300 hover:border-neon-pink/100 hover:text-neon-pink/100 transition-colors"
+            className="flex-1 text-center rounded-md border border-slate-600 py-1.5 text-slate-900 hover:border-neon-pink/100 hover:text-neon-pink/100 transition-colors"
+            style={{ color: textColor }}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}

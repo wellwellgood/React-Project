@@ -1,5 +1,6 @@
 import snakeImg from "../img/Snake Arcade Game.png";
 import dashboardImg from "../img/Dashboard.png";
+import mapprototype from "../img/mapprototype.png";
 
 export const projects = [
     {
@@ -7,13 +8,14 @@ export const projects = [
         role: "토스 게임 공모전 참가 및 출시작",
         period: "2025",
         description:
-            "8bit 스타일 스네이크 게임을 HUD 느낌으로 구현한 미니 게임. 점수/배경음/포커스 제어 등 UX 디테일에 집중.",
+            "8bit 스타일 스네이크 게임을 HUD 느낌으로 구현한 미니 게임. 점수/배경음/포커스 제어 등 UX 디테일에 집중.(토스 앱 내에서 (스네이크 게임)을 검색후 즐겨보세요)",
         tech: ["React", "Custom Canvas", "Audio", "HUD UI"],
         links: {
             demo: "https://tosssnakegame.netlify.app/",
             github: "https://github.com/wellwellgood/snakegame",
         },
         background: `url(${snakeImg}) center/cover no-repeat`,
+        textColor: "#ffffff",
 
     },
     {
@@ -27,6 +29,8 @@ export const projects = [
             demo: "https://hudnavigation.netlify.app/",
             github: "https://github.com/wellwellgood/HUD",
         },
+        background: `url(${mapprototype}) center/cover no-repeat`,
+        textColor: "#ffffff",
     },
     {
         title: "Dashboard",
@@ -41,7 +45,7 @@ export const projects = [
         },
         background: `url(${dashboardImg}) center/cover no-repeat`,
         bgClass: "bg-black-900/100",
-        textColor: "#000000",
+        textColor: "#ffffff",
     },
     {
         title: "Publishing Site",
@@ -54,5 +58,6 @@ export const projects = [
             // demo: alert("깃 허브를 확인해 주세요"),
             github: "https://github.com/wellwellgood/K-popol/tree/main/sitelink",
         },
+        textColor: "#ffffff",
     },
 ];

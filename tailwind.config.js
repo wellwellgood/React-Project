@@ -11,7 +11,12 @@ export default {
                 "neon-cyan": "#4ef2ff",
                 "neon-pink": "#ff4ecd",
                 "neon-yellow": "#ffe66d",
+                "neon-blue": "#111dfc",
                 "neon-purple": "#9b5eff",
+                "neon-green": "#10ee1f",
+                "neon-red": "#ee1010",
+                "neon-white": "#ffffff",
+
             },
             boxShadow: {
                 neon: "0 0 20px rgba(78,242,255,0.45)",
