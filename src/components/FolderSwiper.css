@@ -6,6 +6,8 @@
     position: relative;
     display: flex;
     justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
     perspective: 1000px;
     margin-top: 5%;
     /* 날아가는 카드가 화면 밖에서 안 보이게 */
@@ -119,4 +121,8 @@
 .card-face-back .back-inner {
     text-align: center;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.folder-swiper-info{
+    margin: 30px;
 }
