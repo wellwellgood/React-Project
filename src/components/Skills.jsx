@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const skillGroups = [
   {
@@ -28,6 +30,14 @@ const skillGroups = [
 ];
 
 export default function Skills() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // 애니메이션 시간 (ms)
+      offset: 100, // 언제부터 시작할지 (px)
+      once: true, // 스크롤 내려갔다 올라와도 한 번만 실행
+    });
+  }, []);
+
   return (
     <section id="skills" className="space-y-4">
       <SectionTitle label="SKILLS" />
@@ -35,6 +45,10 @@ export default function Skills() {
       <div className="grid gap-4 sm:grid-cols-2">
         {skillGroups.map((group) => (
           <div
+            id="skills"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-offset="200"
             key={group.label}
             className="rounded-xl border border-slate-700/70 bg-slate-950/60 p-4"
           >
