@@ -108,6 +108,7 @@
     transform: rotateY(180deg);
     background: #050816;
     color: #fff;
+    object-fit: cover;
     display: flex;
     align-items: center;
     justify-content: center;
