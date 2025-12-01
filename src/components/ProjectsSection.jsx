@@ -43,7 +43,7 @@ export default function ProjectsSection() {
 
 function ProjectCard({ project }) {
   const baseClasses =
-    "h-full w-full rounded-b border p-5 flex flex-col gap-3 transition-colors duration-300 bg-transparent";
+    "h-auto w-auto rounded-b border p-5 flex flex-col gap-3 transition-colors duration-300 bg-transparent";
 
     const bgClass = project.bgClass || "bg-transparent";
   const textColor = project.textColor || "";
@@ -52,7 +52,7 @@ function ProjectCard({ project }) {
     return (
       <article
         className={`${baseClasses} ${bgClass} border-slate-700/50 items-center justify-center opacity-60`}
-        style={{ color: textColor }}
+        style={{ color: textColor, textwrap: 'balance' }}
       >
         <div className="text-4xl mb-2">🚧</div>
         <h3 className="text-base font-bold text-center">{project.title}</h3>
@@ -72,17 +72,17 @@ function ProjectCard({ project }) {
           className="text-base font-bold text-slate-50"
           style={{ color: textColor }}
         >
-          {project.title}
+          {project.role}
         </h3>
-        <span className="text-[15px] font-mono text-neon-cyan/100">
+        <span className="text-[16px] font-mono text-neon-yellow/100">
           {project.period}
         </span>
       </div>
 
-      <div className="text-xl text-neon-pink/100">{project.role}</div>
+      <div className="text-xl font-bold text-neon-cyan/90">{project.title}</div>
 
       <p className="text-s leading-relaxed flex-grow"
-      style={{color: project.textColor,}}>
+      style={{color: project.textColor, textwrap: 'balance'}}>
         {project.description}
       </p>
 
@@ -115,7 +115,7 @@ function ProjectCard({ project }) {
         {project.links?.github && (
           <a
             href={project.links.github}
-            className="flex-1 text-center rounded-md border border-slate-600 py-1.5 text-slate-900 hover:border-neon-pink/100 hover:text-neon-pink/100 transition-colors"
+            className="flex-1 text-center rounded-md border border-neon-pink/100 py-1.5 text-neon-pink hover:border-neon-pink/50 hover:bg-neon-pink/50 hover:text-neon-pink/100 transition-colors"
             style={{ color: textColor }}
             target="_blank"
             rel="noreferrer"

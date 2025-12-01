@@ -7,15 +7,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                "hud-bg": "#050816",
-                "neon-cyan": "#4ef2ff",
-                "neon-pink": "#ff4ecd",
-                "neon-yellow": "#ffe66d",
-                "neon-blue": "#111dfc",
-                "neon-purple": "#9b5eff",
-                "neon-green": "#10ee1f",
-                "neon-red": "#ee1010",
-                "neon-white": "#ffffff",
+                "hud-bg": "oklch(0.1395 0.0317 270.28)",
+                "neon-cyan": "oklch(0.8834 0.1327 202.82)",
+                "neon-pink": "oklch(0.7101 0.2456 341.35)",
+                "neon-yellow": "oklch(0.9556 0.205983 107.9555)",
+                "neon-blue": "oklch(0.4634 0.2998 265.35)",
+                "neon-purple": "oklch(0.6303 0.2278 296.75)",
+                "neon-green": "oklch(0.8236 0.2737 142.9)",
+                "neon-red": "oklch(0.5997 0.2408 28.75)",
+                "neon-white": "oklch(1 0 0)",
 
             },
             boxShadow: {

@@ -107,7 +107,7 @@
 .card-face-back {
     transform: rotateY(180deg);
     background: #050816;
-    color: #fff;
+    /* color: #fff; */
     object-fit: cover;
     display: flex;
     align-items: center;
