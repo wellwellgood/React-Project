@@ -45,14 +45,15 @@ function ProjectCard({ project }) {
   const baseClasses =
     "h-auto w-auto rounded-b border p-5 flex flex-col gap-3 transition-colors duration-300 bg-transparent";
 
-    const bgClass = project.bgClass || "bg-transparent";
-  const textColor = project.textColor || "";
+  const bgClass = project.bgClass || "bg-transparent";
+  // textColor 는 Tailwind 클래스 문자열로 사용 (예: "text-black", "text-neon-cyan")
+  const textClass = project.textColor || "";
 
   if (project.isPlaceholder) {
     return (
       <article
-        className={`${baseClasses} ${bgClass} border-slate-700/50 items-center justify-center opacity-60`}
-        style={{ color: textColor, textwrap: 'balance' }}
+        className={`${baseClasses} ${bgClass} ${textClass} border-slate-700/50 items-center justify-center opacity-60`}
+        style={{ textWrap: "balance" }}
       >
         <div className="text-4xl mb-2">🚧</div>
         <h3 className="text-base font-bold text-center">{project.title}</h3>
@@ -68,10 +69,7 @@ function ProjectCard({ project }) {
       className={`${baseClasses} ${bgClass} hover:border-neon-cyan/80 hover:shadow-neon`}
     >
       <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3">
-        <h3
-          className="text-base font-bold text-slate-50"
-          style={{ color: textColor }}
-        >
+        <h3 className={`text-base font-bold ${textClass || "text-slate-50"}`}>
           {project.role}
         </h3>
         <span className="text-[16px] font-mono text-neon-yellow/100">
@@ -81,8 +79,10 @@ function ProjectCard({ project }) {
 
       <div className="text-xl font-bold text-neon-cyan/90">{project.title}</div>
 
-      <p className="text-s leading-relaxed flex-grow"
-      style={{color: project.textColor, textwrap: 'balance'}}>
+      <p
+        className={`text-s leading-relaxed flex-grow ${textClass || ""}`}
+        style={{ textWrap: "balance" }}
+      >
         {project.description}
       </p>
 
@@ -91,8 +91,9 @@ function ProjectCard({ project }) {
         {(project.tech ?? []).map((t) => (
           <span
             key={t}
-            className="rounded-full border border-slate-600/60 bg-slate-900/50 px-2 py-0.5 text-[10px] text-slate-300"
-            style={{ color: textColor }}
+            className={`rounded-full border border-slate-600/60 bg-slate-900/50 px-2 py-0.5 text-[10px] ${
+              textClass || "text-slate-300"
+            }`}
           >
             {t}
           </span>
@@ -103,8 +104,9 @@ function ProjectCard({ project }) {
         {project.links?.demo && (
           <a
             href={project.links.demo}
-            className="flex-1 text-center rounded-md border border-neon-cyan/100 py-1.5 text-neon-cyan hover:bg-neon-cyan/50 transition-colors"
-            style={{ color: textColor }}
+            className={`flex-1 text-center rounded-md border border-neon-cyan/100 py-1.5 hover:bg-neon-cyan/50 transition-colors ${
+              textClass || "text-neon-cyan"
+            }`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -115,8 +117,9 @@ function ProjectCard({ project }) {
         {project.links?.github && (
           <a
             href={project.links.github}
-            className="flex-1 text-center rounded-md border border-neon-pink/100 py-1.5 text-neon-pink hover:border-neon-pink/50 hover:bg-neon-pink/50 hover:text-neon-pink/100 transition-colors"
-            style={{ color: textColor }}
+            className={`flex-1 text-center rounded-md border border-neon-pink/100 py-1.5 hover:border-neon-pink/50 hover:bg-neon-pink/50 hover:text-neon-pink/100 transition-colors ${
+              textClass || "text-neon-pink"
+            }`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
