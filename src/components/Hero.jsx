@@ -1,6 +1,21 @@
 import React from "react";
 
 export default function Hero() {
+  // 헤더 높이만큼 오프셋 주는 스크롤 함수
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const headerOffset = 80; // 헤더 높이(px)에 맞게 조정 (예: 64, 72 등)
+    const rect = el.getBoundingClientRect();
+    const offsetTop = rect.top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section id="hero" className="pt-4 sm:pt-6 flex flex-col gap-6">
       <div className="flex flex-col gap-4">
@@ -25,19 +40,23 @@ export default function Hero() {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <a
-          href="#projects"
+        {/* VIEW PROJECTS 버튼 */}
+        <button
+          type="button"
+          onClick={() => scrollToSection("projects")}
           className="inline-flex items-center gap-2 rounded-full border border-neon-cyan/60 bg-slate-900/60 px-4 py-2 text-xs font-mono uppercase tracking-[0.2em] text-neon-cyan shadow-neon hover:bg-slate-900/90 transition-colors"
         >
           VIEW PROJECTS
-        </a>
+        </button>
 
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/50 px-4 py-2 text-xs font-mono uppercase tracking-[0.2em] text-slate-200 hover:border-neon-pink hover: shadow-neon hover:shdow-pink-900/80 hover:text-neon-pink transition-colors"
+        {/* CONTACT 버튼 */}
+        <button
+          type="button"
+          onClick={() => scrollToSection("contact")}
+          className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/50 px-4 py-2 text-xs font-mono uppercase tracking-[0.2em] text-slate-200 hover:border-neon-pink hover:shadow-neon hover:shadow-pink-900/80 hover:text-neon-pink transition-colors"
         >
           CONTACT
-        </a>
+        </button>
       </div>
     </section>
   );
