@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@csstools/postcss-oklab-function": "4.0.12",
     "aos": "2.3.4",
     "gsap": "3.13.0",
     "react": "^19.2.0",
@@ -31,5 +32,9 @@
     "postcss": "8.5.6",
     "tailwindcss": "3.4.13",
     "vite": "^7.2.4"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not op_mini all"
+  ]
 }
