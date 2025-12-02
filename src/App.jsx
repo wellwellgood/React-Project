@@ -18,10 +18,16 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    window.onbeforeunload = function pushRefresh() {
-      window.scrollTo(0,0);
-    }
-  },[]);
+    const pushRefresh = () => {
+      window.scrollTo(0, 0);
+    };
+    window.onbeforeunload = pushRefresh;
+
+    // cleanup
+    return () => {
+      window.onbeforeunload = null;
+    };
+  }, []);
 
   return (
     <div className="app-bg">
