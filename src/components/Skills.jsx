@@ -50,18 +50,19 @@ export default function Skills() {
             data-aos-delay="200"
             data-aos-offset="200"
             key={group.label}
-            className="rounded-xl border border-slate-700/70 bg-slate-950/60 p-4"
+            className="rounded-xl border border-slate-700/70 bg-slate-950/60 p-4
+            hover:bg-neon-yellow/20 transition hover:border-neon-yellow/50"
           >
             <div className="mb-2 flex items-center justify-between">
-              <div className="text-[11px] font-mono text-slate-400">
+              <div className="text-[14px] font-mono text-slate-400">
                 {group.label}
               </div>
-              <div className="h-[1px] w-10 bg-slate-700" />
+              <div className="h-[1px] w-10 bg-slate-100" />
             </div>
             <ul className="space-y-1.5 text-xs text-slate-200">
               {group.items.map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <span className="h-[5px] w-[5px] rounded-full bg-neon-cyan/80" />
+                  <span className="h-[5px] w-[5px] rounded-full bg-neon-yellow/50" />
                   {item}
                 </li>
               ))}

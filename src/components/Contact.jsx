@@ -16,7 +16,7 @@ export default function Contact() {
             <span className="text-slate-500">EMAIL</span>
             <a
               href="mailto:159pko@naver.com"
-              className="text-neon-cyan hover:underline"
+              className="text-neon-purple hover:underline"
             >
               159pko@naver.com
             </a>
@@ -27,7 +27,7 @@ export default function Contact() {
               href="https://github.com/wellwellgood"
               target="_blank"
               rel="noreferrer"
-              className="text-neon-cyan hover:underline"
+              className="text-neon-purple hover:underline"
             >
               https://github.com/wellwellgood
             </a>

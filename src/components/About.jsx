@@ -7,7 +7,7 @@ export default function About() {
 
       <p className="text-sm sm:text-[15px] leading-relaxed text-slate-200">
         HUD 스타일 UI, 지도 기반 서비스, 미니 게임처럼{" "}
-        <span className="text-neon-cyan">즉각적인 피드백이 있는 화면</span>을
+        <span className="text-neon-pink">즉각적인 피드백이 있는 화면</span>을
         만드는 걸 좋아합니다. React를 중심으로 상태 관리, API 연동, 배포까지 한
         번에 다루며, 실사용에 가까운 프로토타입을 빠르게 만드는 역량에 집중하고
         있습니다.
