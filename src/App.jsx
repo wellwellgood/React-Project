@@ -9,24 +9,32 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function App() {
+  // 새로고침 시 항상 상단으로
   useEffect(() => {
-    AOS.init({
-      duration: 800, // 애니메이션 시간 (ms)
-      offset: 100, // 언제부터 시작할지 (px)
-      once: true, // 스크롤 내려갔다 올라와도 한 번만 실행
-    });
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    // 페이지 로드 시 맨 위로
+    const handleLoad = () => {
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "auto";
+      }
+    };
   }, []);
 
   useEffect(() => {
-    const pushRefresh = () => {
-      window.scrollTo(0, 0);
-    };
-    window.onbeforeunload = pushRefresh;
-
-    // cleanup
-    return () => {
-      window.onbeforeunload = null;
-    };
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true,
+    });
   }, []);
 
   return (
@@ -34,7 +42,6 @@ export default function App() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-6 sm:px-6 sm:py-8 lg:py-10">
         <div className="neon-shell border border-slate-700/70">
           <Header />
-
           <main className="px-4 pb-6 sm:px-8 sm:pb-8 lg:px-10 lg:pb-10 space-y-12 sm:space-y-14">
             <section id="hero">
               <Hero />
