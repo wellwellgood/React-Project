@@ -20,10 +20,16 @@ export default function Hero() {
     <section id="hero" className="pt-4 sm:pt-6 flex flex-col gap-6">
       <div className="flex flex-col gap-4">
         <div className="inline-flex items-center gap-2 text-[10px] font-mono text-slate-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-neon" />
+          <span
+            className="
+      w-1.5 h-1.5 rounded-full
+      bg-neon-cyan
+      animate-neonFlash
+    "
+          />
           <span>ONLINE</span>
           <span className="text-slate-600">/</span>
-          <span>v1.0.0</span>
+          <span>v1.1.12</span>
         </div>
 
         <div>
@@ -32,9 +38,9 @@ export default function Hero() {
             <span className="text-neon-cyan">Frontend Developer</span>
           </h1>
           <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
-            React, HUD UI, 미니게임, 지도 서비스 같은 인터랙티브한 화면을 만드는
-            걸 즐깁니다. 프로토타입부터 배포까지, 눈에 보이는 부분을 끝까지
-            가져갑니다.
+            HTML, CSS, JS 로 부터 반응형 웹 제작과 React로 미니게임, 지도 서비스
+            등 인터랙티브한 화면을 만드는 걸 즐깁니다. 프로토타입부터 배포까지,
+            눈에 보이는 부분을 끝까지 가져갑니다.
           </p>
         </div>
       </div>

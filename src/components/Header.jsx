@@ -13,11 +13,18 @@ export default function Header() {
     }
   };
 
+  const menuItems = [
+    { id: "hero", label: "HOME" },
+    { id: "projects", label: "PROJECTS" },
+    { id: "skills", label: "SKILLS" },
+    { id: "contact", label: "CONTACT" },
+  ];
+
   return (
     <header
-      className="px-4 pt-4 pb-3 sm:px-8 sm:pt-5 sm:pb-4 border-b border-slate-700/70 flex items-center justify-between gap-4 
-overflow: hidden;"
+      className="px-4 pt-4 pb-3 sm:px-8 sm:pt-5 sm:pb-4 border-b border-slate-700/70 flex items-center justify-between gap-4 overflow-hidden"
     >
+      {/* Left Info */}
       <div className="flex items-center gap-3">
         <div className="neon-dot" />
         <div>
@@ -30,31 +37,36 @@ overflow: hidden;"
         </div>
       </div>
 
-      <nav className="hidden sm:flex items-center gap-4 text-[11px] font-mono text-slate-300">
-        <button
-          onClick={() => scrollToSection("hero")}
-          className="hover:text-neon-cyan transition-colors"
-        >
-          HOME
-        </button>
-        <button
-          onClick={() => scrollToSection("projects")}
-          className="hover:text-neon-cyan transition-colors"
-        >
-          PROJECTS
-        </button>
-        <button
-          onClick={() => scrollToSection("skills")}
-          className="hover:text-neon-cyan transition-colors"
-        >
-          SKILLS
-        </button>
-        <button
-          onClick={() => scrollToSection("contact")}
-          className="hover:text-neon-cyan transition-colors"
-        >
-          CONTACT
-        </button>
+      {/* Navigation */}
+      <nav className="hidden sm:flex items-center gap-6 text-[14px] font-mono">
+        {menuItems.map(({ id, label }) => (
+          <button
+            key={id}
+            onClick={() => scrollToSection(id)}
+            className="
+              relative inline-block
+              text-slate-300
+              transition-all duration-300
+
+              hover:text-neon-cyan
+
+              before:content-['['] after:content-[']']
+              before:absolute after:absolute
+              before:opacity-0 after:opacity-0
+
+              before:transition-all after:transition-all
+              before:duration-300 after:duration-300
+
+              before:translate-x-2 after:-translate-x-2
+              hover:before:opacity-100 hover:after:opacity-100
+              hover:before:translate-x-0 hover:after:translate-x-0
+
+              before:-left-3 after:-right-3
+            "
+          >
+            {label}
+          </button>
+        ))}
       </nav>
     </header>
   );

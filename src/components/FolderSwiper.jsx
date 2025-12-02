@@ -215,7 +215,8 @@ export default function FolderSwiper({ items = [], renderItem }) {
           </div>
         </div>
       </div>
-      <div className="folder-swiper-info">
+      <div className="folder-swiper-info"
+      style={{ pointerEvents : "none" }}>
         <p>클릭 및 드래그를 해보시기 바랍니다</p>
       </div>
     </div>

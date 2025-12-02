@@ -13,6 +13,23 @@ export default {
                 "neon-red": "#EE1010",
                 "neon-white": "#FFFFFF",
             },
+            keyframes: {
+                neonFlash: {
+                    "0%": {
+                        opacity: "0",
+                        boxShadow: "none",
+                    },
+                    "50%": {
+                        opacity: "1",
+                    },
+                    "100%":{
+                        opacity: "0",
+                    }
+                },
+            },
+            animation: {
+                neonFlash: "neonFlash 2s linear infinite",
+            },
         },
     },
     plugins: [],
