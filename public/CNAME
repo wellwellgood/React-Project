@@ -1,0 +1,5 @@
+echo "kimkiyun.com" > public/CNAME
+
+git add public/CNAME
+git commit -m "Add CNAME file"
+git push
