@@ -5,13 +5,15 @@
 /* Google Font 픽셀 느낌 */
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* 가로 스크롤만 막기 */
-  overflow-y: auto; /* 세로 스크롤 허용 */
+  overflow-x: hidden;
+  /* 가로 스크롤만 막기 */
+  overflow-y: auto;
+  /* 세로 스크롤 허용 */
 }
-
 
 :root {
   color-scheme: dark;
@@ -35,8 +37,10 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: theme("backgroundImage.grid-dark");
-  background-size: theme("backgroundSize.grid");
+  /* ✅ 직접 값 입력으로 변경 */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
   opacity: 0.4;
   pointer-events: none;
 }
@@ -60,9 +64,10 @@ body {
   border-radius: 1.25rem;
   background: radial-gradient(circle at top left, #111827, #020617);
 }
-.neon-shell:hover{
+
+.neon-shell:hover {
   box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.25),
-  0 0 30px rgba(78, 242, 255, 0.8);
+    0 0 30px rgba(78, 242, 255, 0.8);
 }
 
 .neon-shell::before {
@@ -70,14 +75,12 @@ body {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(
-      135deg,
+  background: linear-gradient(135deg,
       #ff4ecd,
       #4ef2ff,
       #ffe66d,
       #9b5eff,
-      #ff4ecd
-    );
+      #ff4ecd);
   opacity: 0.8;
   z-index: -1;
 }
