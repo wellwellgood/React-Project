@@ -18,7 +18,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    window.ondeforeunload = function pushRefresh() {
+    window.onbeforeunload = function pushRefresh() {
       window.scrollTo(0,0);
     }
   },[]);
