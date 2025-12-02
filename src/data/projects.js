@@ -1,6 +1,7 @@
 import snakeImg from "../img/Snake Arcade Game.png";
 import dashboardImg from "../img/Dashboard.png";
 import mapprototype from "../img/mapprototype.png";
+import error from "../img/204 Error.png";
 
 export const projects = [
     {
@@ -58,6 +59,7 @@ export const projects = [
             // demo: alert("깃 허브를 확인해 주세요"),
             github: "https://github.com/wellwellgood/K-popol/tree/main/sitelink",
         },
+        background: `url(${error}) center/cover no-repeat`,
         textColor: "#ffffff",
     },
 ];
