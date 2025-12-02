@@ -17,6 +17,12 @@ export default function App() {
     });
   }, []);
 
+  useEffect(() => {
+    window.ondeforeunload = function pushRefresh() {
+      window.scrollTo(0,0);
+    }
+  },[]);
+
   return (
     <div className="app-bg">
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-6 sm:px-6 sm:py-8 lg:py-10">
