@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <!-- Google Tag Manager -->
     <script>
@@ -16,27 +16,83 @@
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- 기본 메타 -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 검색엔진 소유권 인증 (네이버 등) -->
     <meta
       name="naver-site-verification"
       content="619bf4c505dbb1dc6cafba17aa834959a9973264"
     />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- 필요하면 Google Search Console 코드도 여기 추가 -->
+
+    <!-- 인덱싱 설정 -->
+    <meta
+      name="robots"
+      content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    />
+
+    <!-- 기본 SEO -->
     <title>네온 포트폴리오 – Web Creator</title>
     <meta
       name="description"
-      content="React와 WebGL 기반 네온 스타일 UI 포트폴리오"
+      content="React와 WebGL 기반 네온 스타일 UI 포트폴리오 – 웹 기획과 프론트엔드 작업을 한 번에 보여주는 개인 포트폴리오 사이트."
     />
-    <meta property="og:title" content="Neon Portfolio" />
-    <meta property="og:description" content="웹 기획과 프론트엔드 작품 모음" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta name="author" content="김기윤" />
+    <meta
+      name="keywords"
+      content="네온 포트폴리오, 웹 포트폴리오, Web Creator, 프론트엔드, React, UI, 웹 기획, 웹 제작"
+    />
+    <meta name="theme-color" content="#050816" />
+
+    <!-- 정규 URL(canonical) -->
+    <link rel="canonical" href="https://kimkiyun.com/" />
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Open Graph (공유용) -->
+    <meta property="og:title" content="네온 포트폴리오 – Web Creator" />
+    <meta
+      property="og:description"
+      content="React와 WebGL 기반 네온 스타일 UI 포트폴리오 – 웹 기획과 프론트엔드 작업 모음."
+    />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kimkiyun.com/" />
+    <meta property="og:image" content="https://kimkiyun.com/og-image.png" />
+    <meta property="og:site_name" content="Neon Portfolio" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="네온 포트폴리오 – Web Creator" />
+    <meta
+      name="twitter:description"
+      content="React와 WebGL 기반 네온 스타일 UI 포트폴리오 – 웹 기획과 프론트엔드 작업 모음."
+    />
+    <meta name="twitter:image" content="https://kimkiyun.com/og-image.png" />
+
+    <!-- 구조화 데이터 (JSON-LD) : WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "네온 포트폴리오 – Web Creator",
+        "url": "https://kimkiyun.com/",
+        "inLanguage": "ko",
+        "description": "React와 WebGL 기반 네온 스타일 UI 포트폴리오 – 웹 기획과 프론트엔드 작업을 한 번에 보여주는 개인 포트폴리오 사이트.",
+        "author": {
+          "@type": "Person",
+          "name": "김기윤"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
