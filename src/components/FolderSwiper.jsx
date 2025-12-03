@@ -3,20 +3,17 @@ import React, { useState, useRef } from "react";
 import "./FolderSwiper.css";
 
 export default function FolderSwiper({ items = [], renderItem }) {
-  // 1. Hook 최상단 선언
   const [index, setIndex] = useState(0);
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  // [추가] 카드가 날아가는 방향 상태 (null | 'left' | 'right')
   const [exitDirection, setExitDirection] = useState(null);
-
   const [isFlipped, setIsFlipped] = useState(false);
+
   const startXRef = useRef(null);
   const didDragRef = useRef(false);
 
   const safeItems = Array.isArray(items) ? items : [];
   const total = safeItems.length;
-
   if (total === 0) return null;
 
   const next = () => setIndex((prev) => (prev + 1) % total);
@@ -25,9 +22,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
   const getClientX = (e) => ("touches" in e ? e.touches[0].clientX : e.clientX);
 
   const handlePointerDown = (e) => {
-    // 애니메이션 중일 때는 클릭 방지
     if (exitDirection) return;
-    // setIsFlipped(true);
     startXRef.current = getClientX(e);
     didDragRef.current = false;
     setIsDragging(true);
@@ -46,28 +41,24 @@ export default function FolderSwiper({ items = [], renderItem }) {
   const handlePointerUp = () => {
     if (!isDragging) return;
 
-    const threshold = 100; // 민감도 조절 (너무 쉽게 넘어가지 않게)
+    const threshold = 100;
 
-    // [수정] 왼쪽으로 넘김 (Next)
     if (dragX <= -threshold) {
-      setExitDirection("left"); // 1. 날아가는 상태 설정
+      setExitDirection("left");
       setTimeout(() => {
-        next(); // 2. 애니메이션 시간(300ms) 후 데이터 변경
-        setExitDirection(null); // 3. 상태 초기화
+        next();
+        setExitDirection(null);
         setDragX(0);
       }, 300);
-    }
-    // [수정] 오른쪽으로 넘김 (Prev)
-    else if (dragX >= threshold) {
+    } else if (dragX >= threshold) {
       setExitDirection("right");
       setTimeout(() => {
         prev();
         setExitDirection(null);
         setDragX(0);
       }, 300);
-    }
-    // [수정] 원위치 복귀
-    else {
+    } else {
+      // 실패 드래그 → 제자리로
       setDragX(0);
     }
 
@@ -75,46 +66,50 @@ export default function FolderSwiper({ items = [], renderItem }) {
     startXRef.current = null;
   };
 
-  // 인덱스 계산
   const topIndex = index;
   const midIndex = (index + 1) % total;
   const backIndex = (index + 2) % total;
 
   const current = safeItems[topIndex];
-  // 스타일 계산 함수
+
+  // 크기 설정
+  const BASE_SCALE = 0.9;
+  const DRAG_SCALE = 0.8;
+  const BASE_OFFSET_Y = 20;
+
   const getTopCardStyle = () => {
-    // 1. 날아가는 애니메이션 중일 때
     if (exitDirection === "left") {
       return {
-        transform: `translate3d(-150%, 0, 0) rotateZ(-20deg)`,
-        opacity: 0,
-        transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
-      };
-    }
-    if (exitDirection === "right") {
-      return {
-        transform: `translate3d(150%, 0, 0) rotateZ(20deg)`,
+        transform: `translate3d(-150%, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(-20deg)`,
         opacity: 0,
         transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
       };
     }
 
-    // 2. 드래그 중일 때 (즉각 반응, transition 없음)
+    if (exitDirection === "right") {
+      return {
+        transform: `translate3d(150%, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(20deg)`,
+        opacity: 0,
+        transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
+      };
+    }
+
+    // 드래그 중일 때만 작게
     if (isDragging) {
       return {
         transform: `translate3d(${dragX}px, ${
-          Math.abs(dragX) * 0.05
-        }px, 0) rotateZ(${dragX * 0.05}deg)`,
+          BASE_OFFSET_Y + Math.abs(dragX) * 0.05
+        }px, 0) scale(${DRAG_SCALE}) rotateZ(${dragX * 0.05}deg)`,
         cursor: "grabbing",
-        transition: "none", // 드래그 중에는 딜레이 없음
+        transition: "transform 0s linear",
       };
     }
 
-    // 3. 기본 상태 (원위치 복귀 시 부드럽게)
+    // 기본 상태 (클릭 포함)
     return {
-      transform: "translate3d(0, 0, 0) rotateZ(-5deg)",
-      transition: "transform 1s cubic-bezier(0.2, 0.8, 0.2, 1)",
+      transform: `translate3d(0, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(-5deg)`,
       cursor: "grab",
+      transition: "transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)",
     };
   };
 
@@ -139,19 +134,17 @@ export default function FolderSwiper({ items = [], renderItem }) {
           {renderItem(safeItems[midIndex], midIndex)}
         </div>
 
-        {/* 앞 카드 (움직이는 카드) */}
+        {/* 앞 카드 */}
         <div
           className={`folder-card folder-card-top ${
             isFlipped ? "is-flipped" : ""
           }`}
           style={getTopCardStyle()}
           onClick={() => {
-            // 1) 지금 드래그 중이었거나, 실제로 움직였으면 플립 막기
             if (isDragging || didDragRef.current || exitDirection) return;
-
-            // 2) 멈춰 있는 상태에서만 앞/뒤 토글
+            // 클릭 시 플립 + 작아지게
             setIsFlipped((prev) => !prev);
-          }} // 클릭 시 플립
+          }}
         >
           <div className="card-flip-inner">
             {/* 앞면 */}
@@ -197,7 +190,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
               {renderItem(safeItems[topIndex], topIndex)}
             </div>
 
-            {/* 뒷면 – 내용은 예시, 알아서 커스텀하면 됨 */}
+            {/* 뒷면 */}
             <div
               className="card-face card-face-back"
               style={
@@ -207,16 +200,15 @@ export default function FolderSwiper({ items = [], renderItem }) {
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }
-                  : {
-                      // background: "#050816",
-                    }
+                  : {}
               }
             ></div>
           </div>
         </div>
       </div>
+
       <div className="folder-swiper-info" draggable={false}>
-        <p className="user-select: none;" draggable={false}>클릭 및 드래그를 해보시기 바랍니다</p>
+        <p draggable={false}>클릭 또는 드래그해서 넘겨보세요</p>
       </div>
     </div>
   );

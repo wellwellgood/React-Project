@@ -43,7 +43,7 @@ export default function ProjectsSection() {
 
 function ProjectCard({ project }) {
   const baseClasses =
-    "h-auto w-auto rounded-b border p-5 flex flex-col gap-3 transition-colors duration-300 bg-transparent";
+    "h-auto w-auto rounded-b p-5 flex flex-col gap-2 transition-colors duration-300 bg-transparent";
 
   const bgClass = project.bgClass || "bg-transparent";
   // textColor 는 Tailwind 클래스 문자열로 사용 (예: "text-black", "text-neon-cyan")
@@ -52,11 +52,11 @@ function ProjectCard({ project }) {
   if (project.isPlaceholder) {
     return (
       <article
-        className={`${baseClasses} ${bgClass} ${textClass} h-auto items-center justify-center opacity-60 border-2 border-white/90`}
+        className={`${baseClasses} ${bgClass} ${textClass} h-auto items-center justify-center opacity-60 border-2`}
       >
         <div className="text-4xl mb-2">🚧</div>
         <h3 className="text-base font-bold text-center">{project.title}</h3>
-        <p className="text-xs text-center leading-relaxed">
+        <p className="text-s text-center leading-relaxed">
           {project.description}
         </p>
       </article>
@@ -65,9 +65,9 @@ function ProjectCard({ project }) {
 
   return (
     <article
-      className={`${baseClasses} ${bgClass} hover:border-neon-cyan/80 hover:shadow-neon`}
+      className={`${baseClasses} ${bgClass} hover:border-neon-cyan/80 hover:shadow-neon flex justify-between`}
     >
-      <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3">
+      <div className="flex items-center justify-between gap-2 border-b  pb-3">
         <h3 className={`text-base font-bold ${textClass || "text-slate-50"}`}>
           {project.role}
         </h3>
@@ -79,7 +79,7 @@ function ProjectCard({ project }) {
       <div className="text-xl font-bold text-neon-cyan/90 border-2 border-neon-cyan/50 p-1 rounded-xl text-center">{project.title}</div>
 
       <p
-        className={`text-s leading-relaxed flex-grow ${textClass || ""}`}
+        className={`text-xs leading-relaxed flex-grow ${textClass || ""}`}
       >
         {project.description}
       </p>
@@ -89,7 +89,7 @@ function ProjectCard({ project }) {
         {(project.tech ?? []).map((t) => (
           <span
             key={t}
-            className={`rounded-full border border-slate-600/60 bg-slate-900/50 px-2 py-0.5 text-[10px] ${
+            className={`rounded-full border border-slate-600/60 bg-slate-900/50 px-2 py-2 text-[12px] ${
               textClass || "text-slate-300"
             }`}
           >
@@ -115,7 +115,7 @@ function ProjectCard({ project }) {
         {project.links?.github && (
           <a
             href={project.links.github}
-            className={`flex-1 text-center rounded-md border border-neon-pink/100 py-1.5 hover:border-neon-pink/50 hover:bg-neon-pink/50 hover:text-neon-pink/100 transition-colors ${
+            className={`flex-1 text-center rounded-md border border-neon-pink/100 py-1.5 hover:border-neon-pink/50 hover:bg-neon-pink/50  ${
               textClass || "text-neon-pink"
             }`}
             target="_blank"

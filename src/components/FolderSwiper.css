@@ -1,8 +1,9 @@
 /* src/components/FolderSwiper.css */
 .folder-swiper {
     width: 100%;
-    height: 400px;
-    /* 컨테이너 높이 */
+    max-width: 420px;
+    height: auto;
+    min-height: 400px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -10,79 +11,66 @@
     align-items: center;
     perspective: 1000px;
     margin: 5% 0;
-    /* 날아가는 카드가 화면 밖에서 안 보이게 */
 }
 
+/* 카드 영역 */
 .folder-swiper-inner {
-    width: 350px;
-    /* 카드 너비 */
-    height: 90%;
+    width: 100%;
+    min-height: 400px;
+    /* 카드 높이 기준 */
     position: relative;
 }
 
+/* 공통 카드 스타일 */
 .folder-card {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
+    border: 1px solid #fff;
     border-radius: 16px;
-    background: #1e1e1e;
-    /* 기본 배경색 */
+    background: #000000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
-    /* 카드 정렬 */
     display: flex;
     flex-direction: column;
 
-    /* 중요: 애니메이션 성능 최적화 */
     will-change: transform, opacity;
     transform-origin: bottom center;
-
     user-select: none;
-    
+}
+
+.folder-card:hover {
+    border: 1px solid #4EF2FF;
 }
 
 /* 맨 뒤 카드 */
 .folder-card-back {
     z-index: 1;
-    transform: scale(0.9) translateY(20px);
+    transform: scale(0.75) translateY(20px);
     opacity: 0.6;
     background: #333;
-    /* 뒤쪽 카드 구분감 */
 }
 
-/* 중간 1 카드 */
+/* 중간 카드 */
 .folder-card-mid {
     z-index: 2;
-    transform: scale(0.95) translateY(10px);
+    transform: scale(0.8) translateY(10px);
     opacity: 0.8;
     background: #2a2a2a;
 }
 
-/* 중간 2 카드 */
-.folder-card-mid {
-    z-index: 2;
-    transform: scale(0.93) translateY(10px);
-    opacity: 0.8;
-    background: #2a2a2a;
-}
-
-/* 맨 앞 카드 */
+/* 맨 앞 카드 기본 옵션 (크기는 JS transform에서 맞춤) */
 .folder-card-top {
     z-index: 3;
-    /* transform은 JS에서 제어 */
-    /* background: #2a2a2a; */
     background-position: center;
     background-size: cover;
     height: 100%;
-}
-
-.folder-card-top {
     perspective: 1200px;
     /* 3D 느낌 */
 }
 
+/* 플립 공통 */
 .card-flip-inner {
     position: relative;
     width: 100%;
@@ -107,7 +95,6 @@
 .card-face-back {
     transform: rotateY(180deg);
     background: #050816;
-    /* color: #fff; */
     object-fit: cover;
     display: flex;
     align-items: center;
@@ -124,10 +111,37 @@
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-.folder-swiper-info{
-    margin-bottom: 30px;
+/* 안내 텍스트 */
+.folder-swiper-info {
+    margin-top: 12px;
+    margin-bottom: 0;
 }
 
-p{
+.folder-swiper-info p {
+    font-size: 12px;
+    color: #cbd5f5;
     user-select: none;
 }
+
+/* 돌아올 때 Zoom-Out */
+.zoom-out-restore {
+    animation: zoomOutRestore 0.4s ease-out forwards;
+}
+
+@keyframes zoomOutRestore {
+    0% {
+        transform: scale(1) translateY(20px) rotateZ(-5deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.8) translateY(10px) rotateZ(-5deg);
+    }
+
+    100% {
+        transform: scale(0.9) translateY(20px) rotateZ(-5deg);
+        opacity: 1;
+    }
+}
+
+
