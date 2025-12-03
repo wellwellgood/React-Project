@@ -27,7 +27,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     border-radius: 16px;
     background: #000000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -40,8 +40,20 @@
     user-select: none;
 }
 
-.folder-card:hover {
+.folder-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    pointer-events: none;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.folder-card:hover::before {
     border: 1px solid #4EF2FF;
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
 }
 
 /* 맨 뒤 카드 */

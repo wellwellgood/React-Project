@@ -56,7 +56,7 @@ function ProjectCard({ project }) {
       >
         <div className="text-4xl mb-2">🚧</div>
         <h3 className="text-base font-bold text-center">{project.title}</h3>
-        <p className="text-s text-center leading-relaxed">
+        <p className="text-m text-center leading-relaxed">
           {project.description}
         </p>
       </article>
@@ -79,7 +79,7 @@ function ProjectCard({ project }) {
       <div className="text-xl font-bold text-neon-cyan/90 border-2 border-neon-cyan/50 p-1 rounded-xl text-center">{project.title}</div>
 
       <p
-        className={`text-xs leading-relaxed flex-grow ${textClass || ""}`}
+        className={`text-ms leading-relaxed flex-grow ${textClass || ""}`}
       >
         {project.description}
       </p>

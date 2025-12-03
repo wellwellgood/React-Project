@@ -101,13 +101,13 @@ export default function FolderSwiper({ items = [], renderItem }) {
           BASE_OFFSET_Y + Math.abs(dragX) * 0.05
         }px, 0) scale(${DRAG_SCALE}) rotateZ(${dragX * 0.05}deg)`,
         cursor: "grabbing",
-        transition: "transform 0s linear",
+        transition: "transform 0.1s linear",
       };
     }
 
     // 기본 상태 (클릭 포함)
     return {
-      transform: `translate3d(0, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(-5deg)`,
+      transform: `translate3d(0, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(-3deg)`,
       cursor: "grab",
       transition: "transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)",
     };
@@ -158,7 +158,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
                   border: "1px solid rgba(255, 255, 255, 1)",
                   borderRadius: "12px 12px 0 0",
                   borderBottom: "1px solid rgba(255, 255, 255, 1)",
-                  background: "#050816",
+                  background: "#e0e0e0",
                 }}
               >
                 <div
@@ -167,6 +167,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
                     height: 12,
                     borderRadius: "50%",
                     background: "rgb(255, 95, 86)",
+                    border: "1px solid rgba(0, 0, 0, 0.2)",
                   }}
                 />
                 <div
@@ -175,6 +176,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
                     height: 12,
                     borderRadius: "50%",
                     background: "rgb(255, 189, 46)",
+                    border: "1px solid rgba(0, 0, 0, 0.2)",
                   }}
                 />
                 <div
@@ -183,6 +185,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
                     height: 12,
                     borderRadius: "50%",
                     background: "rgb(39, 201, 63)",
+                    border: "1px solid rgba(0, 0, 0, 0.2)",
                   }}
                 />
               </div>
