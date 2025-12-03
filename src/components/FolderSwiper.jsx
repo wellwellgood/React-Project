@@ -112,8 +112,8 @@ export default function FolderSwiper({ items = [], renderItem }) {
 
     // 3. 기본 상태 (원위치 복귀 시 부드럽게)
     return {
-      transform: "translate3d(0, 0, 0) rotateZ(-2deg)", // 기본 살짝 기울기
-      transition: "transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1)",
+      transform: "translate3d(0, 0, 0) rotateZ(-5deg)",
+      transition: "transform 1s cubic-bezier(0.2, 0.8, 0.2, 1)",
       cursor: "grab",
     };
   };

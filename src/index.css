@@ -10,9 +10,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* 가로 스크롤만 막기 */
   overflow-y: auto;
-  /* 세로 스크롤 허용 */
 }
 
 :root {
@@ -33,11 +31,9 @@ body {
 }
 
 .app-bg::before {
-  /* 어두운 그리드 */
   content: "";
   position: absolute;
   inset: 0;
-  /* ✅ 직접 값 입력으로 변경 */
   background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -50,8 +46,8 @@ body {
   content: "";
   position: absolute;
   inset: -20%;
-  background: radial-gradient(circle at 0% 0%, #ff4ecd33, transparent 60%),
-    radial-gradient(circle at 100% 0%, #4ef2ff33, transparent 60%),
+  background: radial-gradient(circle at 0% 0%, #ff4ecd33, transparent 100%),
+    radial-gradient(circle at 100% 0%, #0ae6f633, transparent 60%),
     radial-gradient(circle at 50% 100%, #ffe66d22, transparent 60%);
   opacity: 0.65;
   filter: blur(10px);

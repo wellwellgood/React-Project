@@ -52,8 +52,7 @@ function ProjectCard({ project }) {
   if (project.isPlaceholder) {
     return (
       <article
-        className={`${baseClasses} ${bgClass} ${textClass} border-slate-700/50 items-center justify-center opacity-60`}
-        style={{ textWrap: "balance" }}
+        className={`${baseClasses} ${bgClass} ${textClass} h-auto items-center justify-center opacity-60 border-2 border-white/90`}
       >
         <div className="text-4xl mb-2">🚧</div>
         <h3 className="text-base font-bold text-center">{project.title}</h3>
@@ -77,11 +76,10 @@ function ProjectCard({ project }) {
         </span>
       </div>
 
-      <div className="text-xl font-bold text-neon-cyan/90">{project.title}</div>
+      <div className="text-xl font-bold text-neon-cyan/90 border-2 border-neon-cyan/50 p-1 rounded-xl text-center">{project.title}</div>
 
       <p
         className={`text-s leading-relaxed flex-grow ${textClass || ""}`}
-        style={{ textWrap: "balance" }}
       >
         {project.description}
       </p>

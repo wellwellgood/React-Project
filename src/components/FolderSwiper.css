@@ -127,3 +127,7 @@
 .folder-swiper-info{
     margin-bottom: 30px;
 }
+
+p{
+    user-select: none;
+}
