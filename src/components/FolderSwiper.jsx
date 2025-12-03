@@ -195,13 +195,14 @@ export default function FolderSwiper({ items = [], renderItem }) {
 
             {/* 뒷면 */}
             <div
-              className="card-face card-face-back"
+              className="card-face card-face-back margin-top-56"
               style={
                 current?.background
                   ? {
                       background: current.background,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
+                      // marginTop: "56px",
                     }
                   : {}
               }

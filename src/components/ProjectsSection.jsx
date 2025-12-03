@@ -43,7 +43,7 @@ export default function ProjectsSection() {
 
 function ProjectCard({ project }) {
   const baseClasses =
-    "h-auto w-auto rounded-b p-5 flex flex-col gap-2 transition-colors duration-300 bg-transparent";
+    "h-auto w-auto rounded-b p-3 flex flex-col gap-2 transition-colors duration-300 bg-transparent";
 
   const bgClass = project.bgClass || "bg-transparent";
   // textColor 는 Tailwind 클래스 문자열로 사용 (예: "text-black", "text-neon-cyan")
@@ -76,8 +76,7 @@ function ProjectCard({ project }) {
         </span>
       </div>
 
-      <div className="text-xl font-bold text-neon-cyan/90 border-2 border-neon-cyan/50 p-1 rounded-xl text-center">{project.title}</div>
-
+      <div className="text-xl font-bold text-neon-cyan/90  border-neon-cyan/50 p-1 rounded-xl text-left">{project.title}</div>
       <p
         className={`text-ms leading-relaxed flex-grow ${textClass || ""}`}
       >
@@ -98,7 +97,7 @@ function ProjectCard({ project }) {
         ))}
       </div>
 
-      <div className="mt-3 flex items-center gap-2 text-[11px] font-mono">
+      <div className="mt-3 flex items-center gap-2 text-[12px] font-mono">
         {project.links?.demo && (
           <a
             href={project.links.demo}

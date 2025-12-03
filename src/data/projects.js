@@ -9,7 +9,7 @@ export const projects = [
         role: "토스 게임 공모전 참가 및 출시작",
         period: "2025",
         description:
-            "React 기반으로 커스텀 게임 루프와 Canvas 렌더링을 구현한 8bit 스타일 스네이크 게임. 키보드 입력 처리, 점수/속도 상태 관리, BGM·효과음 컨트롤, HUD 오버레이 UI까지 직접 설계해 모바일·웹 환경 모두에서 부드럽게 동작하도록 최적화했습니다. (토스 앱에서 '스네이크 게임' 검색 후 플레이 가능)",
+            "8bit 스타일 스네이크 게임. 키보드 입력 처리, 점수/속도 상태 관리, BGM·효과음 컨트롤, HUD 오버레이 UI까지 직접 설계해 모바일·웹 환경 모두에서 부드럽게 동작하도록 최적화했습니다. (토스 앱에서 '스네이크 게임' 검색 후 플레이 가능)",
         tech: ["React", "Custom Canvas", "Audio", "HUD UI"],
         links: {
             demo: "https://tosssnakegame.netlify.app/",
