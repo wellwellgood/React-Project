@@ -19,6 +19,7 @@
     min-height: 400px;
     /* 카드 높이 기준 */
     position: relative;
+    touch-action: pan-y;
 }
 
 /* 공통 카드 스타일 */
@@ -41,6 +42,7 @@
     will-change: transform, opacity;
     transform-origin: bottom center;
     user-select: none;
+    touch-action: none;
 }
 
 .folder-card::before{

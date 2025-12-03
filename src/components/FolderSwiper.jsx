@@ -26,6 +26,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
     startXRef.current = getClientX(e);
     didDragRef.current = false;
     setIsDragging(true);
+    document.body.style.overscrollBehaviorY = "none";
   };
 
   const handlePointerMove = (e) => {
@@ -64,6 +65,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
 
     setIsDragging(false);
     startXRef.current = null;
+    document.body.style.overscrollBehaviorY = "auto";
   };
 
   const topIndex = index;
@@ -101,7 +103,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
           BASE_OFFSET_Y + Math.abs(dragX) * 0.05
         }px, 0) scale(${DRAG_SCALE}) rotateZ(${dragX * 0.05}deg)`,
         cursor: "grabbing",
-        transition: "transform 0.1s linear",
+        transition: "none",
       };
     }
 
