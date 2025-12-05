@@ -35,6 +35,7 @@ export default function Skills() {
       duration: 800, // 애니메이션 시간 (ms)
       offset: 100, // 언제부터 시작할지 (px)
       once: true, // 스크롤 내려갔다 올라와도 한 번만 실행
+      delay: 300,
     });
   }, []);
 

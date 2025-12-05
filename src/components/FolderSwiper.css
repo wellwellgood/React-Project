@@ -10,25 +10,24 @@
     flex-direction: column-reverse;
     align-items: center;
     perspective: 1000px;
-    margin: 5% 0;
+    margin-bottom: 5%;
 }
 
 /* 카드 영역 */
 .folder-swiper-inner {
     width: 100%;
-    min-height: 400px;
-    /* 카드 높이 기준 */
-    position: relative;
+    min-height: 400px; /* 기본 최소 높이만 */
     touch-action: pan-y;
 }
 
 /* 공통 카드 스타일 */
 .folder-card {
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    top: 0;
     width: 100%;
-    height: 100%;
-    /* border: 1px solid #fff; */
+    height: auto; /* 카드 높이 = 내용 높이 */
     filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -77,21 +76,20 @@
     background: #2a2a2a;
 }
 
-/* 맨 앞 카드 기본 옵션 (크기는 JS transform에서 맞춤) */
+/* 맨 앞 카드 */
 .folder-card-top {
     z-index: 3;
     background-position: center;
     background-size: cover;
-    height: 100%;
-    perspective: 1200px;
-    /* 3D 느낌 */
+    height: auto;          /* ✅ 고정 100% 제거 */
+    perspective: 1200px;   /* 3D 느낌 */
 }
 
 /* 플립 공통 */
 .card-flip-inner {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;          /* ✅ 내용 기준으로 */
     transform-style: preserve-3d;
     transition: transform 0.6s;
 }
@@ -103,16 +101,21 @@
 
 /* 앞/뒷면 공통 */
 .card-face {
-    position: absolute;
-    inset: 0;
+    position: relative;    /* ✅ absolute → relative */
+    inset: auto;
+    width: 100%;
+    height: auto;
     backface-visibility: hidden;
 }
 
+/* 앞면은 기본적으로 그대로 쓰면 됨 */
+
 /* 뒷면 */
 .card-face-back {
+    position: absolute;    /* ✅ 앞면 높이를 기준으로 겹쳐 놓음 */
+    inset: 0;
     transform: rotateY(180deg);
     background: #050816;
-    object-fit: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,5 +163,3 @@
         opacity: 1;
     }
 }
-
-
