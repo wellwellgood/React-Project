@@ -43,7 +43,7 @@ export default function App() {
         <div className="neon-shell border border-slate-700/70">
           <Header />
           <main className="px-4 pb-6 sm:px-8 sm:pb-8 lg:px-10 lg:pb-10 space-y-12 sm:space-y-14">
-            <section id="hero">
+            <section id="hero" className="flex flex-row justify-center align-baseline">
               <Hero />
             </section>
 
