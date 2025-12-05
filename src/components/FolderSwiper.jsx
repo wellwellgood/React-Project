@@ -107,7 +107,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
       };
     }
 
-    // 기본 상태 (클릭 포함)
+    // 기본 상태
     return {
       transform: `translate3d(0, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(-3deg)`,
       cursor: "grab",
@@ -144,13 +144,13 @@ export default function FolderSwiper({ items = [], renderItem }) {
           style={getTopCardStyle()}
           onClick={() => {
             if (isDragging || didDragRef.current || exitDirection) return;
-            // 클릭 시 플립 + 작아지게
             setIsFlipped((prev) => !prev);
           }}
         >
           <div className="card-flip-inner">
             {/* 앞면 */}
             <div className="card-face card-face-front">
+              {/* 맥OS 창 상단 바 */}
               <div
                 style={{
                   display: "flex",
@@ -197,18 +197,17 @@ export default function FolderSwiper({ items = [], renderItem }) {
 
             {/* 뒷면 */}
             <div
-              className="card-face card-face-back margin-top-56 w-auto h-auto"
+              className="card-face card-face-back"
               style={
                 current?.background
                   ? {
                       background: current.background,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
-                      // marginTop: "56px",
                     }
                   : {}
               }
-            ></div>
+            />
           </div>
         </div>
       </div>

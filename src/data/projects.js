@@ -17,7 +17,6 @@ export const projects = [
             "State Management",
             "Keyboard Input",
             "Audio Control",
-            "HUD UI",
             "Responsive Web",
         ],
         links: {
@@ -41,6 +40,7 @@ export const projects = [
             "HUD Navigation UI",
             "Real-time Data Rendering",
             "Responsive Web",
+            "HUD UI",
         ],
         links: {
             demo: "https://hudnavigation.netlify.app/",

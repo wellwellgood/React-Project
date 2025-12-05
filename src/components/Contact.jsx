@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="space-y-2 text-sm text-slate-200">
           <p>
             협업, 피드백, 사이드 프로젝트 제안 모두 환영합니다. 간단한 메일이나
-            DM으로 연락 주세요.
+            연락 주세요.
           </p>
         </div>
         <div className="space-y-2 text-xs font-mono text-slate-300">
@@ -30,6 +30,15 @@ export default function Contact() {
               className="text-neon-purple hover:underline"
             >
               https://github.com/wellwellgood
+            </a>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-slate-500">Phone</span>
+            <a
+              rel="noreferrer"
+              className="text-neon-purple hover:underline"
+            >
+              010 4913 1389
             </a>
           </div>
         </div>
