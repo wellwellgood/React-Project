@@ -1,6 +1,8 @@
 import snakeImg from "../img/Snake Arcade Game.png";
 import dashboardImg from "../img/Dashboard.png";
 import mapprototype from "../img/mapprototype.png";
+import Toss from "../img/Toss.png";
+import Viwer from "../img/ProjectViewer.png";
 import error from "../img/204 Error.png";
 
 export const projects = [
@@ -52,7 +54,7 @@ export const projects = [
     {
         title: "Dashboard",
         role: "개인 프로젝트",
-        period: "2025",
+        period: "2025.03 ~ 2025.06",
         description:
             "Tailwind CSS 유틸리티를 활용해 네온 스타일 위젯 카드들을 설계하고, React 상태 관리와 LocalStorage를 통해 위젯 구성·테마·간단한 설정값을 클라이언트에서 지속 저장하는 미니 대시보드입니다.",
         tech: [
@@ -75,7 +77,7 @@ export const projects = [
     {
         title: "Publishing Site",
         role: "개인 프로젝트",
-        period: "2023 ~ 2025",
+        period: "2021 ~ 2025",
         description:
             "다양한 레이아웃을 HTML·CSS·JavaScript만으로 클론 코딩하며 반응형 그리드, 플렉스 레이아웃, 스크롤 인터랙션, 기본 접근성 구조 등을 실습한 퍼블리싱 아카이브입니다.",
         tech: [
@@ -91,6 +93,45 @@ export const projects = [
             github: "https://github.com/wellwellgood/K-popol/tree/main/sitelink",
         },
         background: `url(${error}) center/cover no-repeat`,
+        textColor: "#ffffff",
+    },
+    {
+        title: "Toss Clone",
+        role: "개인 프로젝트",
+        period: "2025.06 ~ 2025.07",
+        description:
+            "다양한 레이아웃을 HTML·CSS·JavaScript만으로 클론 코딩하며 반응형 그리드, 플렉스 레이아웃, 스크롤 인터랙션, 기본 접근성 구조 등을 실습한 퍼블리싱 아카이브입니다.",
+        tech: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive Layout",
+            "Scroll Interaction",
+            "Semantic Markup",
+            "SEO Basics",
+        ],
+        links: {
+            github: "https://github.com/wellwellgood/K-popol/tree/main/sitelink",
+        },
+        background: `url(${Toss}) center/cover no-repeat`,
+        textColor: "#ffffff",
+    },
+    {
+        title: "Project Viewer",
+        role: "개인 프로젝트",
+        period: "2025.12 ~ 2025.12",
+        description:
+            "제작했던 사이트 및 프로젝트 들을 한눈에 볼수있게 정리해둔 퍼블리싱 아카이브입니다.",
+        tech: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+        ],
+        links: {
+            demo: "https://k-projectviewer.netlify.app/",
+            github: "https://github.com/wellwellgood/Project-Viewer",
+        },
+        background: `url(${Viwer}) center/cover no-repeat`,
         textColor: "#ffffff",
     },
 ];
