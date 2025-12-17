@@ -13,7 +13,7 @@ export default function Contact() {
         </div>
         <div className="space-y-2 text-xs font-mono text-slate-300">
           <div className="flex justify-between">
-            <span className="text-slate-500">EMAIL</span>
+            <span className="text-slate-100">EMAIL</span>
             <a
               href="mailto:159pko@naver.com"
               className="text-neon-purple hover:underline"
@@ -22,7 +22,7 @@ export default function Contact() {
             </a>
           </div>
           <div className="flex justify-between">
-            <span className="text-slate-500">GITHUB</span>
+            <span className="text-slate-100">GITHUB</span>
             <a
               href="https://github.com/wellwellgood"
               target="_blank"
@@ -33,7 +33,7 @@ export default function Contact() {
             </a>
           </div>
           <div className="flex justify-between">
-            <span className="text-slate-500">Phone</span>
+            <span className="text-slate-100">Phone</span>
             <a
               rel="noreferrer"
               className="text-neon-purple hover:underline"

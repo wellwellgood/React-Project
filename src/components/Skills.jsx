@@ -51,8 +51,8 @@ export default function Skills() {
             data-aos-delay="200"
             data-aos-offset="200"
             key={group.label}
-            className="rounded-xl border border-slate-700/70 bg-slate-950/60 p-4
-            hover:bg-neon-yellow/20 transition hover:border-neon-yellow/50"
+            className="rounded-xl border border-slate-100 bg-slate-950/60 p-4
+            hover:ring-4 ring-neon-pink/100 transition hover:border-neon-pink"
           >
             <div className="mb-2 flex items-center justify-between">
               <div className="text-[14px] font-mono text-slate-400">

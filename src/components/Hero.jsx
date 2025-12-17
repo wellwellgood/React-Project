@@ -29,6 +29,8 @@ export default function Hero() {
         overflow-visible
         h-[480px]
         bg-cover bg-center bg-no-repeat
+        rounded-xl
+        mt-6
       "
       style={{ backgroundImage: `url(${img})` }} // 여기엔 url만
     >
