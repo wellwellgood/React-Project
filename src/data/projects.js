@@ -2,7 +2,7 @@ import snakeImg from "../img/Snake Arcade Game.png";
 import dashboardImg from "../img/Dashboard.png";
 import mapprototype from "../img/mapprototype.png";
 import Toss from "../img/Toss.png";
-import Viwer from "../img/ProjectViewer.png";
+import Viwer from "../img/projectViewer.png";
 import error from "../img/204 Error.png";
 
 export const projects = [
@@ -128,7 +128,7 @@ export const projects = [
             "JavaScript",
         ],
         links: {
-            demo: "https://k-projectviewer.netlify.app/",
+            demo: "https://k-projectViewer.netlify.app/",
             github: "https://github.com/wellwellgood/Project-Viewer",
         },
         background: `url(${Viwer}) center/cover no-repeat`,
