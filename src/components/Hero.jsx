@@ -2,7 +2,6 @@ import React from "react";
 // import img from "../img/header img.png";
 import img from "../img/img.png";
 
-
 export default function Hero() {
   // 헤더 높이만큼 오프셋 주는 스크롤 함수
   const scrollToSection = (id) => {
@@ -24,33 +23,51 @@ export default function Hero() {
       id="hero"
       className="
         relative w-full
-        sm:pt-20
+        
         flex justify-between items-center
         overflow-visible
         h-[480px]
-        bg-cover bg-center bg-no-repeat
+        bg-no-repeat
         rounded-xl
         mt-6
       "
-      style={{ backgroundImage: `url(${img})` }} // 여기엔 url만
+      style={{ backgroundImage: `url(${img})` }}
     >
       <div className="relative z-10 flex flex-col gap-5 max-w-xl ms-7">
         <div className="flex flex-col gap-4">
-          <div className="top-3 left-0 sm:top-5 sm:left-0 inline-flex items-center gap-2 text-[10px] font-mono text-slate-400 z-20">
+          <div className=" left-0 sm:top-5 sm:left-0 inline-flex items-center gap-2 text-[10px] font-mono text-slate-400 z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-neonFlash" />
             <span>ONLINE</span>
             <span className="text-slate-600">/</span>
             <span>v1.1.12</span>
           </div>
           <div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-50">
-              지도·HUD·아케이드 게임을 좋아하는{" "}
-              <span className="text-neon-cyan">Frontend Developer</span>
+            <h1
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-hud-bg/100 flex flex-col"
+              style={{
+                textShadow: `
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px  1px 0 #fff,
+                1px  1px 0 #fff
+              `,
+              }}
+            >
+              문제를 빠르게 재현하고 원인을 분리해 해결하는 데 강점있는{" "}
+              <span
+                className="text-neon-cyan"
+                style={{
+                  textShadow: "none",
+                }}
+              >
+                Frontend Developer
+              </span>
             </h1>
-            <p className="mt-3 text-sm sm:text-base text-neon-junglegreen max-w-xl font-bold text-stroke-2 text-stroke-neon-cyan">
-              HTML, CSS, JS 로 부터 반응형 웹 제작과 React로 미니게임, 지도
-              서비스 등 인터랙티브한 화면을 만드는 걸 즐깁니다. 프로토타입부터
-              배포까지, 눈에 보이는 부분을 끝까지 가져갑니다.
+            <p className="mt-3 text-sm sm:text-base text-neon-white max-w-xl font-bold text-stroke-2 text-stroke-neon-cyan">
+              코드 작성보다 결과물로 실제 사용이 가능한지 확인하고,
+              단순 구현보단, 에러 로그·렌더링 결과·배포 환경을
+              기준으로 문제를 분석해 “돌아가는 화면”까지 책임지는 프론트엔드
+              지향 개발자입니다.
             </p>
           </div>
         </div>

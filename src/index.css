@@ -29,7 +29,7 @@ body {
 .app-bg {
   @apply min-h-screen relative overflow-hidden;
   min-height: 100vh;
-  background: linear-gradient(to right, rgba(255, 72, 205, 1), rgba(154, 4, 229, 1));
+  background: #23212C;
 }
 
 .app-bg::before {
@@ -48,9 +48,6 @@ body {
   content: "";
   position: absolute;
   inset: -20%;
-  /* background: radial-gradient(circle at 0% 0%, rgba(255, 78, 205, 0.2), transparent 100%),
-    radial-gradient(circle at 100% 0%, rgba(10, 230, 246, 0.2), transparent 60%),
-    radial-gradient(circle at 50% 100%, rgba(255, 230, 109, 0.133), transparent 60%); */
   opacity: 0.65;
   filter: blur(10px);
   pointer-events: none;
@@ -64,61 +61,24 @@ body {
 
   /* 그라데이션 보더 핵심: background 2겹 */
   border: 2px solid transparent;
-  background:
-    radial-gradient(circle at top left, rgba(17, 24, 39, 0.35), rgba(2, 6, 23, 0.55)) padding-box,
-    linear-gradient(
-      135deg,
-      rgba(255,72,205,1),
-      rgba(105,230,246,1),
-      rgb(154,4,229),
-      rgba(255,72,205,1)
-    ) border-box;
+  /* background: */
+    /* radial-gradient(circle at top left, rgba(17, 24, 39, 0.35), rgba(2, 6, 23, 0.55)) padding-box, */
+    /* linear-gradient( */
+      /* 135deg, */
+      /* rgba(255,72,205,1), */
+      /* rgba(105,230,246,1), */
+      /* rgb(154,4,229), */
+      /* rgba(255,72,205,1) */
+    /* ) border-box; */
 
   /* 네온 글로우 */
   box-shadow:
-    0 0 18px rgba(255, 72, 205, 0.35),
-    0 0 40px rgba(255, 72, 205, 0.20),
-    0 0 26px rgba(105, 230, 246, 0.18),
-    20px 20px 30px rgba(0, 0, 0, 0.45);
+    -10px 0 30px rgba(255, 0, 0, 0.35),
+    0 0 40px rgba(105, 230, 246, 0.18),
+    0 0 26px rgba(255, 72, 205, 0.20),
+    20px 0px 30px rgba(0, 10, 255, 0.5);
 }
 
-
-.neon-shell:hover {
-  box-shadow:
-    0 0 22px rgba(255, 72, 205, 0.45),
-    0 0 54px rgba(255, 72, 205, 0.28),
-    0 0 34px rgba(105, 230, 246, 0.22),
-    20px 20px 30px rgba(0, 0, 0, 0.7);
-}
-
-.neon-shell::before {
-  content: "";
-  position: absolute;
-  inset: -10px;              /* 바깥으로 더 크게 */
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(255,72,205,0.85),
-    rgba(154,4,229,0.75),
-    rgba(255,72,205,0.85)
-  );
-  filter: blur(18px);
-  opacity: 0.55;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.neon-shell::after {
-  content: "";
-  position: absolute;
-  inset: 6px;
-  border-radius: calc(1.25rem - 6px);
-  border: 1px solid rgba(255, 72, 205, 0.35);
-  box-shadow:
-    0 0 10px rgba(255, 72, 205, 0.22),
-    inset 0 0 10px rgba(105, 230, 246, 0.10);
-  pointer-events: none;
-}
 
 /* 섹션 구분용 얇은 HUD 선 */
 .section-divider {

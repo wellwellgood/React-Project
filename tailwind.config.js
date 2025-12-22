@@ -10,12 +10,12 @@ export default {
                 "neon-cyan": "#4AE2FF",
                 "neon-pink": "#FF4ECD",
                 "neon-yellow": "#FFFF00",
-                "neon-blue": "#1DD9FF",
+                "neon-blue": "#0713fc",
                 "neon-purple": "#B055FF",
                 "neon-green": "#10FF1F",
                 "neon-red": "#FF1035",
                 "neon-white": "#FFFFFF",
-                "neon-junglegreen": "#1db56c"
+                "neon-junglegreen": "#1db56c",
             },
             keyframes: {
                 neonFlash: {
