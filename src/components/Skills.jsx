@@ -55,7 +55,7 @@ export default function Skills() {
             rounded-xl p-4
             border border-white/20
             bg-[linear-gradient(135deg,_var(--tw-gradient-stops))]
-            from-neon-yellow/50 to-neon-white/50
+            from-neon-junglegreen/20 to-#23212C/50
             [background-clip:padding-box]
             ring-1 ring-white/20
             transition-transform duration-300 ease-out
@@ -65,12 +65,12 @@ export default function Skills() {
           "
           >
             <div className="mb-2 flex items-center justify-between">
-              <div className="text-[14px] font-mono text-white">
+              <div className="text-[16px] font-mono text-white">
                 {group.label}
               </div>
               <div className="h-[1px] w-10 bg-slate-100" />
             </div>
-            <ul className="space-y-1.5 text-xs text-slate-800 font-900">
+            <ul className="space-y-1.5 text-xs text-white-800 font-900">
               {group.items.map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span className="h-[5px] w-[5px] rounded-full bg-neon-yellow/50" />
