@@ -73,10 +73,24 @@ body {
 
   /* 네온 글로우 */
   box-shadow:
-    -10px 0 30px rgba(255, 0, 0, 0.35),
-    0 0 40px rgba(105, 230, 246, 0.18),
-    0 0 26px rgba(255, 72, 205, 0.20),
-    20px 0px 30px rgba(0, 10, 255, 0.5);
+  -5px 0 30px rgba(255, 255, 255, 0.1),
+  0 0 40px rgba(255, 255, 255, 0.1),
+  0 0 26px rgba(255, 255, 255, 0.1),
+  5px 0px 30px rgba(255, 255, 255, 0.1);
+  transition: 0.3s all ease-in-out;
+}
+.neon-shell:hover{
+  box-shadow:
+  -10px 0 30px rgba(255, 0, 0, 0.35),
+  0 0 40px rgba(105, 230, 246, 0.18),
+  0 0 26px rgba(255, 72, 205, 0.20),
+  20px 0px 30px rgba(0, 10, 255, 0.5);
+  transition: 0.3s all ease-in-out;
+  border-top: 3px solid rgba(255, 72, 205, 0.8);
+  border-left: 3px solid rgba(255, 0, 0, 0.8);
+  border-right: 3px solid rgba(0, 0, 255, 0.8);
+  border-bottom: 3px solid rgba(255, 72, 205, 0.8);
+
 }
 
 

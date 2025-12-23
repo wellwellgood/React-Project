@@ -55,13 +55,13 @@ export default function Skills() {
             rounded-xl p-4
             border border-white/20
             bg-[linear-gradient(135deg,_var(--tw-gradient-stops))]
-            from-neon-junglegreen/20 to-#23212C/50
+            from-neon-junglegreen/10 to-transparent
             [background-clip:padding-box]
             ring-1 ring-white/20
             transition-transform duration-300 ease-out
             transform-gpu will-change-transform
             hover:border-neon-red
-            hover:ring-neon-red/60
+            hover:ring-neon-cyan/60
           "
           >
             <div className="mb-2 flex items-center justify-between">

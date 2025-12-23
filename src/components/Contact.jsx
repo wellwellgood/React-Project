@@ -5,9 +5,9 @@ export default function Contact() {
     <section id="contact" className="space-y-4 pb-2 sm:pb-0">
       <SectionTitle label="CONTACT" />
       <div className="grid gap-4 sm:grid-cols-[1.4fr,1fr]">
-        <div className="space-y-2 text-sm text-slate-200">
+        <div className="space-y-2 text-sm text-slate-200 w-96">
           <p>
-            협업, 피드백, 사이드 프로젝트 제안 모두 환영합니다. 간단한 메일이나
+            협업, 피드백, 사이드 프로젝트 제안 모두 환영합니다.간단한 메일이나
             연락 주세요.
           </p>
         </div>
