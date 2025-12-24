@@ -109,7 +109,7 @@ export default function FolderSwiper({ items = [], renderItem }) {
 
     // 기본 상태
     return {
-      transform: `translate3d(0, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(-3deg)`,
+      transform: `translate3d(0, ${BASE_OFFSET_Y}px, 0) scale(${BASE_SCALE}) rotateZ(-0deg)`,
       cursor: "grab",
       transition: "transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)",
     };

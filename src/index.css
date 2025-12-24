@@ -10,8 +10,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 :root {
@@ -23,13 +22,13 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-}
+  }
 
 /* 배경 그리드 + 네온 프레임 느낌 */
 .app-bg {
   @apply min-h-screen relative overflow-hidden;
   min-height: 100vh;
-  background: #23212C;
+  background: url(img/back.jpg) center/cover no-repeat;
 }
 
 .app-bg::before {
@@ -58,18 +57,11 @@ body {
   position: relative;
   isolation: isolate; /* ::before(-1) 안정화 */
   border-radius: 1.25rem;
+  height: 98vh;
 
   /* 그라데이션 보더 핵심: background 2겹 */
   border: 2px solid transparent;
-  /* background: */
-    /* radial-gradient(circle at top left, rgba(17, 24, 39, 0.35), rgba(2, 6, 23, 0.55)) padding-box, */
-    /* linear-gradient( */
-      /* 135deg, */
-      /* rgba(255,72,205,1), */
-      /* rgba(105,230,246,1), */
-      /* rgb(154,4,229), */
-      /* rgba(255,72,205,1) */
-    /* ) border-box; */
+  background: rgba(0, 0, 0, 0.4);
 
   /* 네온 글로우 */
   box-shadow:
@@ -78,7 +70,29 @@ body {
   0 0 26px rgba(255, 255, 255, 0.1),
   5px 0px 30px rgba(255, 255, 255, 0.1);
   transition: 0.3s all ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
+.neon-shell::-webkit-scrollbar {
+  width: 10px;
+}
+
+.neon-shell::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 10px; /* 위아래 여백 → radius랑 궁합 좋음 */
+}
+
+
+.neon-shell::-webkit-scrollbar-thumb{
+  border-radius: 999px; /* ← 핵심 */
+  background: rgba(185, 72, 255, 0.8);
+  box-shadow:
+    0 0 10px rgba(255, 72, 205, 0.6),
+    0 0 16px rgba(105, 230, 246, 0.4);
+}
+
 .neon-shell:hover{
   box-shadow:
   -10px 0 30px rgba(255, 0, 0, 0.35),
