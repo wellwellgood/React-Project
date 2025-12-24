@@ -43,7 +43,7 @@ export default function Hero() {
           </div>
           <div>
             <h1
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-hud-bg/100 flex flex-col"
+              className="text-2xl sm:text-3xl lg:text-2xl font-bold tracking-tight text-hud-bg/100 flex flex-col"
               style={{
                 textShadow: `
                 -1px -1px 0 #fff,
@@ -53,23 +53,27 @@ export default function Hero() {
               `,
               }}
             >
-              문제를 빠르게 재현하고 원인을 분리해 해결하는 데 강점있는{" "}
+              UI 인터랙션과 화면 완성도를 끝까지 책임지는
+              프론트엔드 · 웹 퍼블리셔 지망 개발자{" "}
               <span
-                className="text-neon-cyan"
+                className="text-neon-cyan text-4xl"
                 style={{
                   textShadow: "none",
                 }}
               >
-                Frontend Developer
+                김기윤 <span className="">입니다.</span>
               </span>
             </h1>
             <p className="mt-3 text-sm sm:text-base text-neon-white max-w-xl font-bold text-stroke-2 text-stroke-neon-cyan">
-              코드 작성보다 결과물로 실제 사용이 가능한지 확인하고,
-              단순 구현보단, 에러 로그·렌더링 결과·배포 환경을
-              기준으로 문제를 분석해 “돌아가는 화면”까지 책임지는 프론트엔드
-              지향 개발자입니다.
+              React와 Vanilla JS를 기반으로
+              CSS 애니메이션, 인터랙션, 반응형 UI를 구현하고
+              실제 배포까지 연결되는 화면을 만드는 데 집중하고 있습니다.
             </p>
           </div>
+          <span className="flex flex-col gap-2">
+            <p className="text-xs font-bold ring-1  w-fit border rounded-full p-1 border-neon-purple text-neon-purple">keywords</p>
+            <p className="text-xs rounded-full p-1 border-neon-pink ring-2 w-fit bg-neon-blue/40"> HTML · CSS · JavaScript · React · UI Animation · Responsive · Deploy</p>
+          </span>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">

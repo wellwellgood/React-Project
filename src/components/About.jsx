@@ -6,16 +6,14 @@ export default function About() {
       <SectionTitle label="ABOUT" />
 
       <p className="text-sm sm:text-[15px] leading-relaxed text-slate-200">
-        지도·HUD·레트로 게임 UI에 강한 관심을 가진 프론트엔드 지망 웹 기획·제작
-        견습생
-        <span className="text-neon-pink font-bold text-4xl">김기윤</span>입니다.
-        React와 Tailwind를 중심으로 즉각적인 피드백이 있는 인터랙티브한 화면을
-        구현하며, 네온 HUD와 아케이드 감성을 현대적인 웹 인터페이스로 풀어내는
-        작업에 집중하고 있습니다. 아이디어나 실험에 그치지 않고, 실제 서비스
-        환경에 배포 가능한 수준까지 완성하는 것을 목표로 합니다. 에러 로그와
-        빌드 과정을 분석하며 문제를 해결하는 과정을 즐기고, 개발을 시작하면
-        리팩토링, 패키징, 배포까지 끝내야 비로소 작업이 완료되었다고 생각하는
-        타입입니다.
+        저는 화면을 단순히 “보이게 만드는 것”이 아니라,
+        사용자의 입력과 흐름에 따라 의도대로 반응하는 UI를 만드는 데 집중해 왔습니다.
+        {/* <span className="text-neon-pink font-bold text-4xl">김기윤</span>입니다. */}
+        CSS 애니메이션과 JavaScript 인터랙션을 활용한 화면 구현을 주력으로 하며,
+        드래그·호버·전환 효과와 같은 사용자 경험 요소를 직접 설계하고 구현합니다.
+
+        실험으로 끝나는 작업보다, 실제 서비스 환경에서 동작하도록
+        배포·유지까지 완료하는 것을 중요하게 생각합니다.
       </p>
     </section>
   );
