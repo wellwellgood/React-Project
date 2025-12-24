@@ -54,7 +54,7 @@ export default function Hero() {
               }}
             >
               UI 인터랙션과 화면 완성도를 끝까지 책임지는
-              프론트엔드 · 웹 퍼블리셔 지망 개발자{" "}
+              Frontend  · WebPublisher{" "}
               <span
                 className="text-neon-cyan text-4xl"
                 style={{

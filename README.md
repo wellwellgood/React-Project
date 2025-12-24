@@ -1,17 +1,80 @@
-# React + Vite
+# Portfolio – Kim Kiyun
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+UI 인터랙션과 애니메이션을 중심으로  
+프론트엔드 및 웹 퍼블리싱 역량을 정리한 개인 포트폴리오입니다.
 
-Currently, two official plugins are available:
+실험으로 끝나는 작업이 아닌,  
+실제 배포 환경에서 동작하는 화면 구현을 목표로 제작했습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔗 Demo
+https://kimkiyun.com/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 👤 Role
+- 기획 · 디자인 · 프론트엔드 (1인)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# React-Project
+---
+
+## 🌐 Environment
+- Web
+- Desktop
+
+---
+
+## 🧩 Tech Stack
+- HTML5  
+- CSS3 (Flex, Grid, Animation, Transition)  
+- JavaScript (ES6+)  
+- React  
+- Vite  
+- Netlify (Deploy)
+- 카페24 Domain
+
+---
+
+## ❓ Problem
+기존 웹 포트폴리오들은 정적인 화면 위주로 구성되어 있어  
+사용자와 상호작용하는 UI 경험이 부족하다고 느꼈습니다.
+
+또한 단순 결과물 나열이 아닌,  
+**인터랙션과 사용자 흐름을 직접 설계한 포트폴리오**를 만들고자 했습니다.
+
+---
+
+## 🛠 Solution
+- CSS `transform`과 `transition`을 활용한 UI 애니메이션 구현
+- 마우스, 드래그, 호버 기반 인터랙션 직접 설계
+- React 상태 기반 렌더링으로 화면 전환 및 UI 제어
+- 반응형 레이아웃으로 모바일·데스크톱 환경 대응
+- 실험적인 UI를 실제 배포 환경에서 검증
+
+---
+
+## ✅ Result
+- 개인 도메인을 통해 실제 서비스 배포
+- 모바일·데스크톱 환경에서 정상 동작 확인
+- 사용자 입력에 즉각 반응하는 인터랙션 UI 구현
+- UI 실험과 채용용 포트폴리오를 동시에 만족하는 구조 완성
+
+---
+
+## 📌 Focus
+- 사용자 경험을 고려한 인터랙션 구현
+- CSS 기반 애니메이션 최적화
+- 화면 완성도와 배포까지 책임지는 프론트엔드 개발
+
+---
+
+## 📂 Related Projects
+- Snake Arcade Game (Web Game)
+- UI Interaction Experiments
+- HUD-style Layout UI
+
+---
+
+## 📎 Contact
+- Portfolio: https://kimkiyun.com/
+- GitHub: https://github.com/wellwellgood
