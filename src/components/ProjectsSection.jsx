@@ -57,7 +57,8 @@ function ProjectCard({ project }) {
         <div className="text-4xl mb-2">🚧</div>
         <h3 className="text-base font-bold text-center">{project.title}</h3>
         <p className="text-m text-center leading-relaxed">
-          {project.description}
+          {project.Role}
+          {project.Environment}
         </p>
       </article>
     );
@@ -67,6 +68,7 @@ function ProjectCard({ project }) {
     <article
       className={`${baseClasses} ${bgClass} hover:border-neon-cyan/80 hover:shadow-neon flex justify-between`}
     >
+      {/* 프로젝트 이름 */}
       <div className="flex items-center justify-between gap-2 border-b  pb-3">
         <h3 className={`text-base font-bold ${textClass || "text-slate-50"}`}>
           {project.role}
@@ -75,7 +77,14 @@ function ProjectCard({ project }) {
           {project.period}
         </span>
       </div>
-
+      {/* 역할 및 환경 */}
+      <div className="flex items-center justify-between gap-2 border-b  pb-3">
+        <h3>
+          {project.Role}
+        </h3>
+        {project.Environment}
+      </div>
+      {/* 프로젝트 설명 */}
       <div className="text-xl font-bold text-neon-cyan/90  border-neon-cyan/50 p-1 rounded-xl text-left">{project.title}</div>
       <p
         className={`text-ms leading-relaxed flex-grow ${textClass || ""}`}
@@ -83,27 +92,25 @@ function ProjectCard({ project }) {
         {project.description}
       </p>
 
-      {/* tech 없으면 빈 배열로 처리해서 length 에러 방지 */}
+      {/* 기술 */}
       <div className="flex flex-wrap gap-1.5 mt-auto pt-3">
         {(project.tech ?? []).map((t) => (
           <span
             key={t}
-            className={`rounded-full border border-slate-600/60 bg-slate-900/50 px-2 py-2 text-[12px] ${
-              textClass || "text-slate-300"
-            }`}
+            className={`rounded-full border border-slate-600/60 bg-slate-900/50 px-2 py-2 text-[14px] font-bold${textClass || "text-slate-300"
+              }`}
           >
             {t}
           </span>
         ))}
       </div>
-
-      <div className="mt-3 flex items-center gap-2 text-[12px] font-mono">
+      {/* 링크 */}
+      <div className="mt-3 flex items-center gap-2 text-[12px] font-bold">
         {project.links?.demo && (
           <a
             href={project.links.demo}
-            className={`flex-1 text-center rounded-md border border-neon-cyan/100 py-1.5 hover:bg-neon-cyan/50 transition-colors ${
-              textClass || "text-neon-cyan"
-            }`}
+            className={`flex-1 text-center rounded-md border border-neon-cyan/100 py-1.5 hover:bg-neon-cyan/90 hover:text-hud-bg transition-colors ${textClass || "text-neon-cyan"
+              }`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -114,9 +121,8 @@ function ProjectCard({ project }) {
         {project.links?.github && (
           <a
             href={project.links.github}
-            className={`flex-1 text-center rounded-md border border-neon-pink/100 py-1.5 hover:border-neon-pink/50 hover:bg-neon-pink/50  ${
-              textClass || "text-neon-pink"
-            }`}
+            className={`flex-1 text-center rounded-md border border-neon-pink/100 py-1.5 hover:border-neon-pink/50 hover:bg-neon-pink/90  ${textClass || "text-neon-pink"
+              }`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
