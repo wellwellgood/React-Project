@@ -33,7 +33,7 @@ export default function Hero() {
       "
       style={{ backgroundImage: `url(${img})` }}
     >
-      <div className="relative z-10 flex flex-col gap-5 max-w-xl ms-7">
+      <div className="relative z-10 flex flex-col gap-5 max-w-xl ms-7 hover: scale-105 transition-transform">
         <div className="flex flex-col gap-4">
           <div className=" left-0 sm:top-5 sm:left-0 inline-flex items-center gap-2 text-[10px] font-mono text-slate-400 z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-neonFlash" />

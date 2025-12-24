@@ -31,37 +31,16 @@ body {
   background: url(img/back.jpg) center/cover no-repeat;
 }
 
-.app-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.app-bg::after {
-  /* 네온 그라데이션 블러 */
-  content: "";
-  position: absolute;
-  inset: -20%;
-  opacity: 0.65;
-  filter: blur(10px);
-  pointer-events: none;
-}
-
 /* 안쪽 메인 박스 네온 프레임 */
 .neon-shell {
   position: relative;
   isolation: isolate; /* ::before(-1) 안정화 */
   border-radius: 1.25rem;
-  height: 98vh;
+  height: 100vh;
 
   /* 그라데이션 보더 핵심: background 2겹 */
   border: 2px solid transparent;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
 
   /* 네온 글로우 */
   box-shadow:

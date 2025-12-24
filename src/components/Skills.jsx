@@ -30,6 +30,19 @@ const skillGroups = [
 ];
 
 export default function Skills() {
+
+  useEffect(() => {
+    AOS.init({ once: true });
+
+    const shell = document.querySelector(".neon-shell");
+    if (!shell) return;
+
+    const onScroll = () => AOS.refreshHard();
+    shell.addEventListener("scroll", onScroll);
+
+    return () => shell.removeEventListener("scroll", onScroll);
+  }, []);
+
   useEffect(() => {
     AOS.init({
       duration: 800, // 애니메이션 시간 (ms)
@@ -43,10 +56,10 @@ export default function Skills() {
     <section id="skills" className="space-y-4">
       <SectionTitle label="SKILLS" />
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="flex flex-col gap-4">
         {skillGroups.map((group) => (
           <div
-            id="skills"
+            id="skill"
             data-aos="fade-up"
             data-aos-delay="200"
             data-aos-offset="200"
